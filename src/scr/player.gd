@@ -1,7 +1,3 @@
-# dear guy that is finding secrets here,
-# this is the movement script for the ball, dont change ANYTHING here.
-# also there are no secrets.
-
 extends CharacterBody3D
 
 
@@ -27,8 +23,6 @@ func _physics_process(delta: float) -> void:
 
 @warning_ignore("unused_parameter")
 func _on_death_border_body_entered(body: CharacterBody3D) -> void:
-	#if := body = CharacterBody3D
-		#then
 	get_tree().change_scene_to_file("res://death.tscn")
 
 func _process(_delta: float) -> void:
