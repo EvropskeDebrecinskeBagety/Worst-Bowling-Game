@@ -1,7 +1,8 @@
 <center><img width="600" height="160" alt="Worst Bowling Game Banner" src="https://github.com/user-attachments/assets/d92206fa-3893-4396-b2ed-5c792f78e9de" /></center>
 
 
-![itch.io](https://img.shields.io/badge/itch.io%20-%20red?style=plastic&logo=itch.io%2Ffavicon.ico&link=filik19.itch.io%2Fworst-bowling-game)
+![itch.io](https://img.shields.io/badge/itch.io%20-%20red?style=plastic&logo=itch.io%2Ffavicon.ico&link=http%3A%2F%2Ffilik19.itch.io%2Fworst-bowling-game)
+
 
 
 
