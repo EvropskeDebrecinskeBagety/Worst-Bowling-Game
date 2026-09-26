@@ -4,12 +4,13 @@
 [ext_resource type="Script" uid="uid://bb70imk3sg1fb" path="res://scr/player.gd" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://q6eivhn0x6ja" path="res://caseoh-2.webp" id="3_h2yge"]
 [ext_resource type="FontFile" uid="uid://bnd5exjksp7kt" path="res://BAUHS93.ttf" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://ca4x5gmk5afnx" path="res://scr/consol.gd" id="5_lquwl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r3tlg"]
 size = Vector3(2.9297867, 4.1710105, 14.025397)
 
 [sub_resource type="BoxMesh" id="BoxMesh_r3tlg"]
-size = Vector3(2.9326172, 0.18003845, 14.02721)
+size = Vector3(2.9326172, 37.57412, 14.02721)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0xm2m"]
 radius = 0.6394051
@@ -59,17 +60,29 @@ sdfgi_use_occlusion = true
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_7v02q"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_mdiuu"]
+size = Vector3(100.89928, 0.82714844, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mdiuu"]
+size = Vector3(0.001, 9.703857, 146.1813)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7v02q"]
+size = Vector3(134.77481, 1, 179.94682)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0kjk1"]
+size = Vector3(133.65839, 1.0004883, 179.46936)
+
 [node name="Node3D" type="Node3D" unique_id=972202778]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1186330218]
+[node name="plat" type="StaticBody3D" parent="." unique_id=1186330218]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.9978313, -1.552638)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=859373680]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="plat" unique_id=859373680]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008289337, -1.6409099, 1.4746537)
 shape = SubResource("BoxShape3D_r3tlg")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=44481480]
-transform = Transform3D(1, 0, 0, 0, 108.811676, 0, 0, 0, 1, -0.0073242188, -9.353888, 1.4745197)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="plat" unique_id=44481480]
+transform = Transform3D(1, 0, 0, 0, 108.811676, 0, 0, 0, 1, -0.0073242188, -2043.81, 1.4745197)
 mesh = SubResource("BoxMesh_r3tlg")
 
 [node name="ball" parent="." unique_id=1851737853 instance=ExtResource("1_ig7tw")]
@@ -86,12 +99,12 @@ material_override = SubResource("StandardMaterial3D_1bvp3")
 material_overlay = SubResource("StandardMaterial3D_lquwl")
 mesh = SubResource("CapsuleMesh_h2yge")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=957090299]
-transform = Transform3D(0.013518246, -0.086792514, 0.9961347, -0.0032882493, 0.9962165, 0.086844265, -0.99990326, -0.004449521, 0.013181703, 10.392891, 10.12908, 0.02391696)
+[node name="Camera3D" type="Camera3D" parent="ball" unique_id=957090299]
+transform = Transform3D(0.01376, -0.17642133, 0.9842186, -0.0020537681, 0.9843047, 0.17646548, -0.99990326, -0.004449521, 0.013181703, 9.803125, 2.1950417, 1.4450953)
 keep_aspect = 0
-fov = 81.15914
+fov = 93.95355
 
-[node name="ui" type="Control" parent="Camera3D" unique_id=769697831]
+[node name="ui" type="Control" parent="ball/Camera3D" unique_id=769697831]
 layout_mode = 3
 anchor_right = 1.0020001
 anchor_bottom = 1.0
@@ -99,7 +112,7 @@ offset_right = -0.9602051
 offset_bottom = 4.0
 metadata/_edit_use_anchors_ = true
 
-[node name="achievment_menu" type="Panel" parent="Camera3D/ui" unique_id=1413057539]
+[node name="achievment_menu" type="Panel" parent="ball/Camera3D/ui" unique_id=1413057539]
 visible = false
 layout_mode = 0
 offset_left = 13.0
@@ -107,7 +120,7 @@ offset_top = 933.0
 offset_right = 522.0
 offset_bottom = 1066.0
 
-[node name="ahh!!!" type="BoxContainer" parent="Camera3D/ui/achievment_menu" unique_id=1494497481]
+[node name="ahh!!!" type="BoxContainer" parent="ball/Camera3D/ui/achievment_menu" unique_id=1494497481]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.055000003
@@ -119,7 +132,7 @@ offset_top = 0.020999908
 offset_right = -0.100997925
 offset_bottom = -0.010009766
 
-[node name="Label" type="Label" parent="Camera3D/ui/achievment_menu" unique_id=1427089760]
+[node name="Label" type="Label" parent="ball/Camera3D/ui/achievment_menu" unique_id=1427089760]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -131,7 +144,7 @@ label_settings = SubResource("LabelSettings_g4v7s")
 horizontal_alignment = 1
 uppercase = true
 
-[node name="exitNote" type="Label" parent="Camera3D/ui" unique_id=1164559400]
+[node name="exitNote" type="Label" parent="ball/Camera3D/ui" unique_id=1164559400]
 layout_mode = 0
 offset_left = 7.0
 offset_top = 1028.0
@@ -142,8 +155,23 @@ label_settings = SubResource("LabelSettings_yf5fn")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="console" type="LineEdit" parent="ball/Camera3D/ui" unique_id=832637044 node_paths=PackedStringArray("input_field", "ball")]
+layout_mode = 0
+offset_left = 1288.0
+offset_top = 1040.0
+offset_right = 1922.0
+offset_bottom = 1078.0
+placeholder_text = "Enter command"
+max_length = 25
+expand_to_text_length = true
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+script = ExtResource("5_lquwl")
+input_field = NodePath(".")
+ball = NodePath("../../..")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1923155407]
-transform = Transform3D(0.44260523, 0.72295535, 0.5305059, 0.09901673, -0.62739384, 0.77238107, 0.8912332, -0.28933108, -0.34927243, -5.0919995, 15.032755, -6.624254)
+transform = Transform3D(0.046090037, 0.15777245, -0.98639935, 0.36206478, 0.9176669, 0.16369653, 0.93101287, -0.36468527, -0.014828652, -13.744074, 21.934046, -6.624254)
 
 [node name="fol_kuzelky" type="Node3D" parent="." unique_id=1819233925]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.721058, 0.060478687)
@@ -212,7 +240,7 @@ mesh = SubResource("BoxMesh_u0thq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.9978313, -1.552638)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="deathBorder" unique_id=1253973280]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32216215, -7.564185, 1.2679596)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32216215, -19.095684, 1.2679596)
 shape = SubResource("BoxShape3D_g4v7s")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=378954895]
@@ -220,5 +248,36 @@ environment = SubResource("Environment_0kjk1")
 camera_attributes = SubResource("CameraAttributesPractical_7v02q")
 
 [node name="Node" type="Node" parent="." unique_id=2029877915]
+
+[node name="secPath" type="StaticBody3D" parent="." unique_id=469044947]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="secPath" unique_id=1640455234]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.87056, 7.028917, 0)
+shape = SubResource("BoxShape3D_mdiuu")
+debug_fill = false
+
+[node name="dethbordervis" type="StaticBody3D" parent="." unique_id=733773640]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="dethbordervis" unique_id=595302706]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.61031, -7.1795692, -0.33155823)
+mesh = SubResource("BoxMesh_mdiuu")
+
+[node name="devmap" type="Node3D" parent="." unique_id=198704760]
+
+[node name="devmapplat" type="StaticBody3D" parent="devmap" unique_id=1926359792]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.70353, 0, 352.66064)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="devmap/devmapplat" unique_id=1222072671]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.870773, 0, 2.1219025)
+mesh = SubResource("BoxMesh_7v02q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="devmap/devmapplat" unique_id=1539893930]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.382721, 0.00024414063, 2.1218872)
+shape = SubResource("BoxShape3D_0kjk1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="devmap" unique_id=75987159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.120605, 18.552967, 357.9824)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="devmap/StaticBody3D" unique_id=1215299352]
 
 [connection signal="body_entered" from="deathBorder" to="ball" method="_on_death_border_body_entered"]

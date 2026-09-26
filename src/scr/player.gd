@@ -23,8 +23,10 @@ func _physics_process(delta: float) -> void:
 
 @warning_ignore("unused_parameter")
 func _on_death_border_body_entered(body: CharacterBody3D) -> void:
+	print("Changing to death.tscn")
 	get_tree().change_scene_to_file("res://death.tscn")
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("exit"):
+		print("Quitting from player.gd")
 		get_tree().quit()

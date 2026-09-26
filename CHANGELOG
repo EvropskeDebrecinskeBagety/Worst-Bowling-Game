@@ -1,0 +1,21 @@
+v2026.09.1.3 (PRE)
+
+2026.09.1.3 
+- Removed a random fry from assets
+- Removed menu.gd, quit.gd and menu.tscn
+- Camera moves now with the ball
+- The platform is now longer
+- Will log almost everything the game does
+- Added a secret path so you can fall into the void infinitely
+- Fixed the physics engine being on the moon
+- Added a console
+- Removed ideas.txt from assets
+- Added a test map for future use
+
+2026.09.1.2
+- Added german manual
+- Added config (for future use)
+- Added Links to the launcher (config and website)
+- Gameroot directory will now have a CHANGELOG file
+- Enviroment now has a sun and a texture
+- Cleaned up the code a bit

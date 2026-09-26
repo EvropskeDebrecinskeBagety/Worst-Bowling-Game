@@ -1,1 +1,7 @@
+CollisionShape3D
+StaticBody3D
+Node3D
+MeshInstance3D
+LineEdit
+XRCamera3D
 Node
