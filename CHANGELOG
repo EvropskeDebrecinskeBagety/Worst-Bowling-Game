@@ -11,6 +11,12 @@ v2026.09.1.3 (PRE)
 - Added a console
 - Removed ideas.txt from assets
 - Added a test map for future use
+- Jump is now triggered by keybind "jump" and not "ui_accept"
+- Optimized code
+- Idle console will now say "Enter command here" instead of "Enter command"
+- Added a console logs
+- Changed how commands work: "devtestmap" = "dev testmap", "givecords" = "give cords" for subcommands
+- Added a parkour
 
 2026.09.1.2
 - Added german manual
