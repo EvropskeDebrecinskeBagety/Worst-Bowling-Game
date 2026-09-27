@@ -41,6 +41,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func _execute_command(cmd: String) -> void:
 	match cmd.to_lower():
 		"help":
+			log_window.text = "available command: help, quit, dev, voidme, give"
 			print("available command: help, quit, dev, voidme, give")
 		"quit":
 			log_window.text = "the dev wanted me to die"

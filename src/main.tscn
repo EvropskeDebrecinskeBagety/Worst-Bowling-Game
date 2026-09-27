@@ -106,7 +106,7 @@ material_overlay = SubResource("StandardMaterial3D_lquwl")
 mesh = SubResource("CapsuleMesh_h2yge")
 
 [node name="Camera3D" type="Camera3D" parent="ball" unique_id=957090299]
-transform = Transform3D(0.01376, -0.17642133, 0.9842186, -0.0020537681, 0.9843047, 0.17646548, -0.99990326, -0.004449521, 0.013181703, 9.803125, 2.1950417, 0.15828419)
+transform = Transform3D(0.013690937, -0.48309332, 0.8754619, 0.0024726067, 0.8755576, 0.4831075, -0.99990326, -0.004449521, 0.013181703, 9.402904, 4.19532, 0.10434818)
 keep_aspect = 0
 fov = 99.00413
 
