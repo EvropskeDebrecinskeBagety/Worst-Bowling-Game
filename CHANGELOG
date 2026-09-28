@@ -1,6 +1,18 @@
-v2026.09.1.3
+v2026.09.1.4
 
-2026.09.1.3 
+2026.09.1.4
+- Caseoh (the ball) is now more bigger
+- Camera moved a little bit to the left and more up
+- Moved parkour to a sepparate 2Dscene
+- Every print into godot console will have "console: " in front of it
+- Platform is now shorter
+- Sign model has been removed
+- Secret path for falling into void has been disabled but remains in source
+- May now spam space to fly
+- Fixed collision of the platform
+- Expanded parkour
+
+2026.09.1.3 (736a398)
 - Removed a random fry from assets
 - Removed menu.gd, quit.gd and menu.tscn
 - Camera moves now with the ball
@@ -20,7 +32,7 @@ v2026.09.1.3
 - Console command help will now show in integrated console
 - Camera is now more up
 
-2026.09.1.2
+2026.09.1.2 (7a926e0)
 - Added german manual
 - Added config (for future use)
 - Added Links to the launcher (config and website)

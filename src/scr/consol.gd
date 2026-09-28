@@ -34,18 +34,17 @@ func _unhandled_input(event: InputEvent) -> void:
 			var command = input_field.text.strip_edges()
 			_execute_command(command)
 			input_field.clear()
-			
-			get_viewport().set_input_as_handled()
+
 
 
 func _execute_command(cmd: String) -> void:
 	match cmd.to_lower():
 		"help":
 			log_window.text = "available command: help, quit, dev, voidme, give"
-			print("available command: help, quit, dev, voidme, give")
+			print("console: available command: help, quit, dev, voidme, give")
 		"quit":
 			log_window.text = "the dev wanted me to die"
-			print("the dev wanted me to die")
+			print("console: the dev wanted me to die")
 			get_tree().quit()
 		# dev section
 		"dev testmap":
@@ -54,24 +53,24 @@ func _execute_command(cmd: String) -> void:
 			balltotest()
 		"dev hellomoto":
 			log_window.text = "Hello moto *tune starts playing*"
-			print("Hello moto *tune starts playing*")
+			print("console: Hello moto *tune starts playing*")
 		"dev alahakbar":
 			log_window.text = "'Today a plane crashed into the towers'"
-			print("'Today a plane crashed into the towers'")
+			print("console: 'Today a plane crashed into the towers'")
 		"dev parkour":
 			log_window.text = "teleporting into parkour..."
-			print("teleporting into parkour...")
-			balltoparkour()
+			print("console: teleporting into parkour...")
+			get_tree().change_scene_to_file("res://parkur.tscn")
 		# end of dev section
 		"voidme":
 			log_window.text = "voiding player..."
-			print("voiding player...")
+			print("console: voiding player...")
 			voidtheball()
 		# give section
 		"give cords":
 			log_window.text = "cannot show cordinates here, please look into godot console or logs"
-			print("cords of ball: ", ball.position)
+			print("console: cords of ball: ", ball.position)
 		# end of give section
 		_:
 			log_window.text = "unknown command. please check that you entered it correctly."
-			print("unknown command: ", cmd)
+			print("console: unknown command: ", cmd)
