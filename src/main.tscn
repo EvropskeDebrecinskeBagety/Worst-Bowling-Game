@@ -190,7 +190,7 @@ emoji_menu_enabled = false
 shortcut_keys_enabled = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1923155407]
-transform = Transform3D(0.046090037, 0.15777245, -0.98639935, 0.36206478, 0.9176669, 0.16369653, 0.93101287, -0.36468527, -0.014828652, -13.744074, 21.934046, -6.624254)
+transform = Transform3D(0.30450723, 0.79849875, -0.51930255, 0.20122243, 0.4789619, 0.85446197, 0.9310128, -0.36468524, -0.014828551, -13.744074, 21.934046, -6.624254)
 
 [node name="fol_kuzelky" type="Node3D" parent="." unique_id=1819233925]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.721058, 0.060478687)

@@ -1,10 +1,10 @@
 9cad1ddce9e5a63143ba340c9520626b
-::res://::1790617097
+::res://::1790627755
 BAUHS93.ttf::FontFile::3306898659627643135::1789252090::1789252189::1::::<><><>0<>0<>b1e32c09704f48e7abdbfc388fe2ca08<>res://godot/imported/BAUHS93.ttf-caef0d77531324e93f1062ed606eb2a7.fontdata::
 bowlingicon.webp::CompressedTexture2D::297362746980559891::1789252090::1789252189::1::::<><><>0<>0<>e502bb1d06f4cf5bed95416cef23db51<>res://godot/imported/bowlingicon.webp-32cdfc3031eecb5187697e6a7d8deaf9.ctex::
 caseoh-2.webp::CompressedTexture2D::1187275477335669206::1789252090::1789252189::1::::<><><>0<>0<>654d1642ab6aebc0b4eb21bb4632f495<>res://godot/imported/caseoh-2.webp-8aff630b25cd9bf09779c546b3a5c66d.s3tc.ctex<*>res://godot/imported/caseoh-2.webp-8aff630b25cd9bf09779c546b3a5c66d.etc2.ctex::
 death.tscn::PackedScene::2201227201396754047::1789252090::0::1::::<><><>0<>0<><>::uid://birv4fq2sf7r2::::res://scr/quit.gd<>uid://bfmwg6rl4a0na::::res://daethass/bageta_debrecinska-1024x1024.jpg<>uid://dqmpyeqfuf1o7::::res://daethass/sigma.png
-export_presets.cfg::TextFile::-1::1790510788::0::1::::<><><>0<>0<><>::
+export_presets.cfg::TextFile::-1::1790617472::0::1::::<><><>0<>0<><>::
 gmcover.png::CompressedTexture2D::2202164651863186387::1789252090::1789252189::1::::<><><>0<>0<>9f310ff93630a72f60a083e51ed3d30a<>res://godot/imported/gmcover.png-e780f3ed6ade3e0275798249c48b7178.ctex::
 main.tscn::PackedScene::8336394082999405703::1790602048::0::1::::<><><>0<>0<><>::uid://bsknvhwny5hb0::::res://player.tscn<>uid://bb70imk3sg1fb::::res://scr/player.gd<>uid://q6eivhn0x6ja::::res://caseoh-2.webp<>uid://bnd5exjksp7kt::::res://BAUHS93.ttf<>uid://ca4x5gmk5afnx::::res://scr/consol.gd
 parkur.tscn::PackedScene::485477069387493433::1790598342::0::1::::<><><>0<>0<><>::uid://birv4fq2sf7r2::::res://scr/quit.gd<>uid://c80dv1ucfjfpt::::res://scr/2dplay.gd
