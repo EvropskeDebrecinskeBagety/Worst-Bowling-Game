@@ -18,8 +18,19 @@ v2026.09.1.4
 - Commands that are not in use have got their special message
 - Added command to 'clear' log window
 - Updated message for command 'dev alahakbar'
-- Added command 'useless' that features currently one command 'useless mj' which should write micheal jacksons whole life story from wikipedia into the console
-
+- Added command 'useless' that features currently one subcommand 'useless mj' which should write micheal jacksons whole life story from wikipedia into the console
+- Removed notes for 2d player controler script
+- Removed "gmcover.png" from assets
+- DeathBorder is now more up (y +)
+- Consol is now in the test parkour scene with limited commands
+- Updated consol log window placeholder text
+- Increased FOV for main scene camera
+- DeathBorder is more longer on every side
+- Enabled shadows
+- Moved main scene camera a little bit into the center of the ball
+- Balls hitbox is more bigger and accurate
+- Every print into logs will have [type of message] infront, like [INFO] or [WARN]
+- Updated quit message for quitting in consol
 
 2026.09.1.3 (736a398)
 - Removed a random fry from assets

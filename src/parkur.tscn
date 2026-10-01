@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://birv4fq2sf7r2" path="res://scr/quit.gd" id="1_5kctx"]
 [ext_resource type="Script" uid="uid://c80dv1ucfjfpt" path="res://scr/2dplay.gd" id="1_8byyc"]
+[ext_resource type="Script" uid="uid://clarux8fxx2rw" path="res://scr/2dconsol.gd" id="3_ek56c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mdiuu"]
 size = Vector2(128, 20)
@@ -24,6 +25,8 @@ size = Vector2(3119, 101)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7hh2e"]
 size = Vector2(37.796875, 1126.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mdiuu"]
 
 [node name="Node2D" type="Node2D" unique_id=447581541]
 script = ExtResource("1_5kctx")
@@ -212,6 +215,51 @@ mesh = SubResource("SphereMesh_0kjk1")
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1263288335]
 position = Vector2(667, 604)
 
+[node name="ui" type="Control" parent="CharacterBody2D" unique_id=1630449843]
+layout_mode = 3
+anchor_right = 1.0020001
+anchor_bottom = 1.0
+offset_right = -0.9602051
+offset_bottom = 4.0
+metadata/_edit_use_anchors_ = true
+
+[node name="console" type="LineEdit" parent="CharacterBody2D/ui" unique_id=1278798128 node_paths=PackedStringArray("input_field", "log_window")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.67
+anchor_top = 0.95900005
+anchor_right = 1.0
+anchor_bottom = 0.994
+offset_left = 991.0
+offset_top = 1107.164
+offset_right = 1625.0
+offset_bottom = 1138.024
+placeholder_text = "Enter command here"
+max_length = 25
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+script = ExtResource("3_ek56c")
+input_field = NodePath(".")
+log_window = NodePath("TextEdit")
+
+[node name="TextEdit" type="TextEdit" parent="CharacterBody2D/ui/console" unique_id=1966354939]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.97400004
+anchor_right = 1.0
+offset_left = 1.0
+offset_top = 0.012001038
+offset_bottom = -2.0
+placeholder_text = "Logs here"
+editable = false
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+middle_mouse_paste_enabled = false
+empty_selection_clipboard_enabled = false
+
 [node name="border" type="StaticBody2D" parent="." unique_id=1062249695]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="border" unique_id=1365357772]
@@ -223,9 +271,29 @@ position = Vector2(3082, 605.25)
 shape = SubResource("RectangleShape2D_5kctx")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="border" unique_id=2008618100]
-position = Vector2(1557.5, 1120.5)
+position = Vector2(1558, 1136)
 shape = SubResource("RectangleShape2D_ek56c")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="border" unique_id=929917954]
 position = Vector2(14.8984375, 598.25)
 shape = SubResource("RectangleShape2D_7hh2e")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="border" unique_id=249108610]
+position = Vector2(16.5, 619)
+scale = Vector2(35, 1168)
+mesh = SubResource("BoxMesh_mdiuu")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="border" unique_id=1634652588]
+position = Vector2(1552, 1186)
+scale = Vector2(3059.9998, 36.000072)
+mesh = SubResource("BoxMesh_mdiuu")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="border" unique_id=1781838603]
+position = Vector2(3066.5, 619)
+scale = Vector2(35, 1168.0001)
+mesh = SubResource("BoxMesh_mdiuu")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="border" unique_id=210585218]
+position = Vector2(1541.75, 61.5)
+scale = Vector2(3080.5, 53.051)
+mesh = SubResource("BoxMesh_mdiuu")

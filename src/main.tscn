@@ -13,7 +13,7 @@ size = Vector3(2.9297867, 5.327693, 14.025397)
 size = Vector3(2.9326172, 0.048855543, 14.02721)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0xm2m"]
-radius = 0.852993
+radius = 0.8521427
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mycd"]
 albedo_texture = ExtResource("3_h2yge")
@@ -22,13 +22,6 @@ normal_scale = 5.28
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_h2yge"]
 radius = 0.84716797
 height = 1.6943359
-
-[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
-font = ExtResource("4_1bvp3")
-font_size = 33
-font_color = Color(0.9057225, 0.2969437, 0.3875146, 1)
-shadow_size = 0
-shadow_color = Color(0.008065267, 0.0067215324, 0.0067215324, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_yf5fn"]
 font = ExtResource("4_1bvp3")
@@ -41,7 +34,7 @@ size = Vector3(0.12841797, 0.98727417, 0.089897156)
 size = Vector3(0.12750244, 0.9958496, 0.08805847)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
-size = Vector3(146.52536, 0.69506836, 145.95142)
+size = Vector3(269.5542, 0.52038574, 239.28967)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7mycd"]
 
@@ -94,9 +87,12 @@ material_override = SubResource("StandardMaterial3D_7mycd")
 mesh = SubResource("CapsuleMesh_h2yge")
 
 [node name="Camera3D" type="Camera3D" parent="ball" unique_id=957090299]
-transform = Transform3D(0.013912271, -0.3153301, 0.94888014, -6.547367e-05, 0.9489717, 0.3153615, -0.99990326, -0.0044495207, 0.013181702, 9.402904, 4.19532, 0.10434818)
+transform = Transform3D(0.00040789787, -0.31536144, 0.94897157, -6.5473665e-05, 0.9489716, 0.31536144, -0.9999998, -0.00019076886, 0.00036643818, 9.852547, 4.19532, 0.18169737)
 keep_aspect = 0
-fov = 99.00413
+doppler_tracking = 2
+fov = 104.3
+size = 6.063
+frustum_offset = Vector2(-0.025, 0.13)
 
 [node name="ui" type="Control" parent="ball/Camera3D" unique_id=769697831]
 layout_mode = 3
@@ -105,38 +101,6 @@ anchor_bottom = 1.0
 offset_right = -0.9602051
 offset_bottom = 4.0
 metadata/_edit_use_anchors_ = true
-
-[node name="achievment_menu" type="Panel" parent="ball/Camera3D/ui" unique_id=1413057539]
-visible = false
-layout_mode = 0
-offset_left = 13.0
-offset_top = 933.0
-offset_right = 522.0
-offset_bottom = 1066.0
-
-[node name="ahh!!!" type="BoxContainer" parent="ball/Camera3D/ui/achievment_menu" unique_id=1494497481]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.055000003
-anchor_top = 0.263
-anchor_right = 0.289
-anchor_bottom = 0.97
-offset_left = 0.0049991608
-offset_top = 0.020999908
-offset_right = -0.100997925
-offset_bottom = -0.010009766
-
-[node name="Label" type="Label" parent="ball/Camera3D/ui/achievment_menu" unique_id=1427089760]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.293
-offset_right = -1.0
-offset_bottom = 0.031059265
-text = "Achievments"
-label_settings = SubResource("LabelSettings_g4v7s")
-horizontal_alignment = 1
-uppercase = true
 
 [node name="exitNote" type="Label" parent="ball/Camera3D/ui" unique_id=1164559400]
 layout_mode = 1
@@ -183,14 +147,20 @@ anchor_right = 1.0
 offset_left = 1.0
 offset_top = 0.012001038
 offset_bottom = -2.0
-placeholder_text = "Here will be logs from the console below"
+placeholder_text = "Logs here"
 editable = false
 context_menu_enabled = false
 emoji_menu_enabled = false
 shortcut_keys_enabled = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1923155407]
-transform = Transform3D(0.30450723, 0.79849875, -0.51930255, 0.20122243, 0.4789619, 0.85446197, 0.9310128, -0.36468524, -0.014828551, -13.744074, 21.934046, -6.624254)
+transform = Transform3D(0.14709315, 0.8599014, -0.4888078, 0.7973457, 0.1893548, 0.5730483, 0.58532333, -0.47404045, -0.657786, -13.744074, 21.934046, -2.3170824)
+light_energy = 2.368
+light_specular = 1.737
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_normal_bias = 0.0
+shadow_blur = 7.021
 
 [node name="fol_kuzelky" type="Node3D" parent="." unique_id=1819233925]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.721058, 0.060478687)
@@ -259,7 +229,7 @@ mesh = SubResource("BoxMesh_u0thq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.9978313, -1.552638)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="deathBorder" unique_id=1253973280]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32216215, -19.095684, 1.2679596)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4225235, -7.3356543, 1.3072691)
 shape = SubResource("BoxShape3D_g4v7s")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=378954895]
@@ -284,20 +254,16 @@ visible = false
 
 [node name="devmapplat" type="StaticBody3D" parent="devmap" unique_id=1926359792]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6188507, 0, 0.8312607)
-visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="devmap/devmapplat" unique_id=1222072671]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.870773, 0, 2.1219025)
-visible = false
 mesh = SubResource("BoxMesh_7v02q")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="devmap/devmapplat" unique_id=1539893930]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.382721, 0.00024414063, 2.1218872)
-visible = false
 shape = SubResource("BoxShape3D_0kjk1")
 
 [node name="balltp" type="StaticBody3D" parent="devmap" unique_id=75987159]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8780975, 5.3714542, 2.1888275)
-visible = false
 
 [connection signal="body_entered" from="deathBorder" to="ball" method="_on_death_border_body_entered"]

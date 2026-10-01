@@ -16,7 +16,7 @@ general/accessibility_support=2
 
 config/name="Worst Bowling Game"
 config/description="Worst Bowling Game"
-config/version="2026.09.1.4"
+config/version="2026.10.1.4"
 config/tags=PackedStringArray("game")
 run/main_scene="uid://dq1hgsvlyespb"
 run/enable_alt_space_menu=true
@@ -31,7 +31,6 @@ boot_splash/bg_color=Color(0.06469657, 0.06469652, 0.0646965, 1)
 boot_splash/show_image=false
 boot_splash/stretch_mode=0
 boot_splash/use_filter=false
-boot_splash/image="uid://6m0lhtkkw3el"
 config/icon="uid://eibryjj0vf0v"
 boot_splash/minimum_display_time=1562
 

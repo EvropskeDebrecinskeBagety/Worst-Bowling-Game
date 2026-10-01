@@ -1,26 +1,28 @@
 extends Control
 
 @export var input_field: LineEdit
-@export var ball: CharacterBody3D
 @export var log_window: TextEdit
-
-# yes this is serious.
-var helloworld = print
 
 func _ready() -> void:
 	hide()
 func balltotest():
-	ball.position = Vector3(55.121, 5.371, 357.982)
+	cannotusefunc()
 func voidtheball():
-	ball.position = Vector3(9999, 9999, 9999)
+	cannotusefunc()
 func balltoparkour():
-	ball.position = Vector3(-111.971, 1, 164.413)
+	cannotusefunc()
 func oldcommand():
-	log_window.text = "This is a legacy command and has been disabled"
-	print("[WARN] This is a legacy command and has been disabled")
+	log_window.text = "This is a legacy/unsupported command and has been disabled"
+	print("[WARN] This is a legacy/unsupported command and has been disabled")
 func notinusecommand():
 	log_window.text = "This command is not use currently, it may be reserved for future use"
 	print("[WARN] This command is not in use currently, it may be reserved for future use")
+func cannotusehere():
+	log_window.text = "This command cannot be used in this scene"
+	print("[WARN] This command cannot be used in this scene")
+func cannotusefunc():
+	log_window.text = "This function cannot be used in this scene"
+	print("[WARN] This function cannot be used in this scene")
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("console.open"):
 		print("[INFO] opening console")
@@ -64,11 +66,10 @@ func _execute_command(cmd: String) -> void:
 			log_window.text = "Hello moto *tune doesnt start playing due to copyright*"
 			print("[CONSOLE] Hello moto *tune doesnt start playing due to copyright*")
 		"dev alahakbar":
-			oldcommand()
+			log_window.text = "'Today a plane crashed into the towers and our mothers too'"
+			print("[CONSOLE] 'Today a plane crashed into the towers and our mothers too'")
 		"dev parkour":
-			log_window.text = "teleporting into parkour..."
-			print("[CONSOLE] teleporting into parkour...")
-			get_tree().change_scene_to_file("res://parkur.tscn")
+			cannotusehere()
 		# end of dev section
 		# test section
 		"devtest error":
@@ -78,14 +79,16 @@ func _execute_command(cmd: String) -> void:
 		# end of test section
 		# useless section
 		"useless mj":
-			log_window.text = ""
-			print("[CONSOLE] ")
+			log_window.text = "no"
+			print("[CONSOLE] no")
 		"voidme":
 			oldcommand()
+			#log_window.text = "voiding player..."
+			#print("console: voiding player...")
+			#voidtheball()
 		# give section
 		"give cords":
-			log_window.text = "cannot show cordinates here, please look into godot console or logs"
-			print("[CONSOLE] cords of ball: ", ball.position)
+			cannotusehere()
 		# end of give section
 		_:
 			log_window.text = "unknown command. please check that you entered it correctly."
