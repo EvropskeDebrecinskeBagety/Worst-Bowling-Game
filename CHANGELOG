@@ -1,4 +1,7 @@
-v2026.09.1.4
+v2026.10.2.0
+
+2026.10.2.0
+- Changed file gitkey to gitkey.sh in source
 
 2026.09.1.4
 - Caseoh (the ball) is now more bigger
