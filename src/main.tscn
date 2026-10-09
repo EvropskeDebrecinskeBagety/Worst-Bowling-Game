@@ -3,8 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://bsknvhwny5hb0" path="res://player.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://bb70imk3sg1fb" path="res://scr/player.gd" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://q6eivhn0x6ja" path="res://caseoh-2.webp" id="3_h2yge"]
-[ext_resource type="FontFile" uid="uid://bnd5exjksp7kt" path="res://BAUHS93.ttf" id="4_1bvp3"]
+[ext_resource type="FontFile" uid="uid://cm0tm67b1gexx" path="res://BebasNeue-Regular.ttf" id="5_7mycd"]
+[ext_resource type="Script" uid="uid://deh4p5r8xtnb0" path="res://scr/menu.gd" id="5_272bh"]
 [ext_resource type="Script" uid="uid://ca4x5gmk5afnx" path="res://scr/consol.gd" id="5_lquwl"]
+[ext_resource type="Environment" path="/home/filik19/Projekty/crappy-ball/src/envs/environment.tres" id="6_7mycd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r3tlg"]
 size = Vector3(2.9297867, 5.327693, 14.025397)
@@ -23,9 +25,9 @@ normal_scale = 5.28
 radius = 0.84716797
 height = 1.6943359
 
-[sub_resource type="LabelSettings" id="LabelSettings_yf5fn"]
-font = ExtResource("4_1bvp3")
-font_size = 36
+[sub_resource type="LabelSettings" id="LabelSettings_6eo0t"]
+font = ExtResource("5_7mycd")
+font_size = 28
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_co0b0"]
 size = Vector3(0.12841797, 0.98727417, 0.089897156)
@@ -36,29 +38,10 @@ size = Vector3(0.12750244, 0.9958496, 0.08805847)
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
 size = Vector3(269.5542, 0.52038574, 239.28967)
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7mycd"]
-
-[sub_resource type="Sky" id="Sky_lquwl"]
-sky_material = SubResource("ProceduralSkyMaterial_7mycd")
-process_mode = 1
-
-[sub_resource type="Environment" id="Environment_0kjk1"]
-background_mode = 2
-background_color = Color(0.277549, 0.4775508, 0.5643019, 1)
-sky = SubResource("Sky_lquwl")
-sdfgi_enabled = true
-sdfgi_use_occlusion = true
-
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_7v02q"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mdiuu"]
 size = Vector3(97.75583, 0.82714844, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_7v02q"]
-size = Vector3(134.77481, 1, 179.94682)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_0kjk1"]
-size = Vector3(133.65839, 1.0004883, 179.46936)
 
 [node name="Node3D" type="Node3D" unique_id=972202778]
 
@@ -90,7 +73,7 @@ mesh = SubResource("CapsuleMesh_h2yge")
 transform = Transform3D(0.00040789787, -0.31536144, 0.94897157, -6.5473665e-05, 0.9489716, 0.31536144, -0.9999998, -0.00019076886, 0.00036643818, 9.852547, 4.19532, 0.18169737)
 keep_aspect = 0
 doppler_tracking = 2
-fov = 104.3
+fov = 102.18838
 size = 6.063
 frustum_offset = Vector2(-0.025, 0.13)
 
@@ -101,22 +84,6 @@ anchor_bottom = 1.0
 offset_right = -0.9602051
 offset_bottom = 4.0
 metadata/_edit_use_anchors_ = true
-
-[node name="exitNote" type="Label" parent="ball/Camera3D/ui" unique_id=1164559400]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.004
-anchor_top = 0.9480001
-anchor_right = 0.09
-anchor_bottom = 0.98700005
-offset_left = -0.6915202
-offset_top = 0.36791992
-offset_right = 0.9407959
-offset_bottom = 0.091918945
-text = "Esc To Exit"
-label_settings = SubResource("LabelSettings_yf5fn")
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="console" type="LineEdit" parent="ball/Camera3D/ui" unique_id=832637044 node_paths=PackedStringArray("input_field", "ball", "log_window")]
 layout_mode = 1
@@ -152,6 +119,90 @@ editable = false
 context_menu_enabled = false
 emoji_menu_enabled = false
 shortcut_keys_enabled = false
+
+[node name="Panel" type="Panel" parent="ball/Camera3D/ui" unique_id=778853084 node_paths=PackedStringArray("gamemenu", "achievmenu")]
+layout_mode = 0
+offset_left = 222.0
+offset_top = 590.0
+offset_right = 508.0
+offset_bottom = 986.0
+script = ExtResource("5_272bh")
+gamemenu = NodePath(".")
+achievmenu = NodePath("../achievmenu")
+
+[node name="pausedtex" type="Label" parent="ball/Camera3D/ui/Panel" unique_id=1876809479]
+layout_mode = 0
+offset_top = 7.0
+offset_right = 286.0
+offset_bottom = 53.0
+text = "PAUSED"
+label_settings = SubResource("LabelSettings_6eo0t")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="ball/Camera3D/ui/Panel" unique_id=956868704]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 47.0
+offset_right = 283.0
+offset_bottom = 51.0
+
+[node name="qui" type="Button" parent="ball/Camera3D/ui/Panel" unique_id=178933897]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 356.0
+offset_right = 283.0
+offset_bottom = 393.0
+theme_override_colors/font_color = Color(0.63375676, 0.6337568, 0.63375676, 1)
+theme_override_colors/font_pressed_color = Color(0.8222036, 0.23713088, 0.23133981, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.4745098, 0.4745098, 0.4745098, 0.5019608)
+theme_override_fonts/font = ExtResource("5_7mycd")
+text = "QUIT"
+flat = true
+
+[node name="unpa" type="Button" parent="ball/Camera3D/ui/Panel" unique_id=1234252283]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 315.0
+offset_right = 283.0
+offset_bottom = 352.0
+theme_override_colors/font_color = Color(0.63375676, 0.6337568, 0.63375676, 1)
+theme_override_colors/font_pressed_color = Color(0.8222036, 0.23713088, 0.23133981, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.4745098, 0.4745098, 0.4745098, 0.5019608)
+theme_override_fonts/font = ExtResource("5_7mycd")
+text = "UNPAUSE"
+flat = true
+
+[node name="achiev" type="Button" parent="ball/Camera3D/ui/Panel" unique_id=2128324832]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 58.0
+offset_right = 283.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.63375676, 0.6337568, 0.63375676, 1)
+theme_override_colors/font_pressed_color = Color(0.8222036, 0.23713088, 0.23133981, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.4745098, 0.4745098, 0.4745098, 0.5019608)
+theme_override_fonts/font = ExtResource("5_7mycd")
+disabled = true
+text = "ACHIEVMENTS"
+flat = true
+
+[node name="HSeparator2" type="HSeparator" parent="ball/Camera3D/ui/Panel" unique_id=707173341]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 351.0
+offset_right = 283.0
+offset_bottom = 360.0
+
+[node name="achievmenu" type="Panel" parent="ball/Camera3D/ui" unique_id=353327346]
+layout_mode = 0
+offset_left = 511.0
+offset_top = 695.0
+offset_right = 1024.0
+offset_bottom = 986.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1923155407]
 transform = Transform3D(0.14709315, 0.8599014, -0.4888078, 0.7973457, 0.1893548, 0.5730483, 0.58532333, -0.47404045, -0.657786, -13.744074, 21.934046, -2.3170824)
@@ -226,14 +277,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003710419, -0.0020751953, 0
 mesh = SubResource("BoxMesh_u0thq")
 
 [node name="deathBorder" type="Area3D" parent="." unique_id=311282126]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.9978313, -1.552638)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.382915, -1.552638)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="deathBorder" unique_id=1253973280]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4225235, -7.3356543, 1.3072691)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4225235, 0.15573883, 1.3072691)
 shape = SubResource("BoxShape3D_g4v7s")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=378954895]
-environment = SubResource("Environment_0kjk1")
+environment = ExtResource("6_7mycd")
 camera_attributes = SubResource("CameraAttributesPractical_7v02q")
 
 [node name="Node" type="Node" parent="." unique_id=2029877915]
@@ -248,22 +299,7 @@ shape = SubResource("BoxShape3D_mdiuu")
 disabled = true
 debug_fill = false
 
-[node name="devmap" type="Node3D" parent="." unique_id=198704760]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.82676, 0, 369.9708)
-visible = false
-
-[node name="devmapplat" type="StaticBody3D" parent="devmap" unique_id=1926359792]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6188507, 0, 0.8312607)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="devmap/devmapplat" unique_id=1222072671]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.870773, 0, 2.1219025)
-mesh = SubResource("BoxMesh_7v02q")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="devmap/devmapplat" unique_id=1539893930]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.382721, 0.00024414063, 2.1218872)
-shape = SubResource("BoxShape3D_0kjk1")
-
-[node name="balltp" type="StaticBody3D" parent="devmap" unique_id=75987159]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8780975, 5.3714542, 2.1888275)
-
+[connection signal="pressed" from="ball/Camera3D/ui/Panel/qui" to="ball/Camera3D/ui/Panel" method="_on_quit_pressed"]
+[connection signal="pressed" from="ball/Camera3D/ui/Panel/unpa" to="ball/Camera3D/ui/Panel" method="_on_unpause_button_pressed"]
+[connection signal="pressed" from="ball/Camera3D/ui/Panel/achiev" to="ball/Camera3D/ui/Panel" method="_on_achiev_pressed"]
 [connection signal="body_entered" from="deathBorder" to="ball" method="_on_death_border_body_entered"]

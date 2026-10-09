@@ -1,7 +1,13 @@
 v2026.10.2.0
 
 2026.10.2.0
-- Changed file gitkey to gitkey.sh in source
+- Pressing Esc will now trigger a popup instead of closing
+- Adjusted Main scene camera FOV to be smaller
+- Will now take longer for the daeth scene to activate
+- devplatmap has been removed
+- balltp for devmap removed
+- Fixed bugs
+- When starting, an image will now popup
 
 2026.09.1.4
 - Caseoh (the ball) is now more bigger

@@ -1,3 +1,7 @@
+Panel
+HSeparator
+Button
+Label
 MeshInstance2D
 CollisionShape2D
 StaticBody2D
@@ -8,7 +12,3 @@ MeshInstance3D
 CollisionShape3D
 CharacterBody3D
 RigidBody3D
-StaticBody3D
-Node3D
-TextEdit
-LineEdit
