@@ -8,6 +8,8 @@ v2026.10.2.0
 - balltp for devmap removed
 - Fixed bugs
 - When starting, an image will now popup
+- Removed files called "default" from source
+- GitHub Repository will have 2 branches
 
 2026.09.1.4
 - Caseoh (the ball) is now more bigger
