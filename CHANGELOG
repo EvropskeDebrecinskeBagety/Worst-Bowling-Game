@@ -10,8 +10,15 @@ v2026.10.2.0
 - When starting, an image will now popup
 - Removed files called "default" from source
 - GitHub Repository will have 2 branches
+- Consol will now appear on the upper middle of the new esc menu
+- Removed consol log window
+- 'useless mj' command now flagged as old
+- Moved some consol scripts into menu script
+- Fixed version numbering in CHANGELOG file
+- New nametags
+- Added command 'give fps' to print out fps into console
 
-2026.09.1.4
+2026.10.1.4 (c3a8898)
 - Caseoh (the ball) is now more bigger
 - Camera moved a little bit to the left and more up
 - Moved parkour to a sepparate 2Dscene

@@ -4,7 +4,7 @@ extends Control
 @export var ball: CharacterBody3D
 @export var log_window: TextEdit
 
-# yes this is serious.
+# yes this is NOT serious.
 var helloworld = print
 
 func _ready() -> void:
@@ -21,20 +21,20 @@ func oldcommand():
 func notinusecommand():
 	log_window.text = "This command is not use currently, it may be reserved for future use"
 	print("[WARN] This command is not in use currently, it may be reserved for future use")
-func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("console.open"):
-		print("[INFO] opening console")
-		log_window.visible = true
-		show()
-		input_field.clear()
-		if input_field:
-			input_field.grab_focus()
-		
-	if Input.is_action_just_pressed("console.close"):
-		print("[INFO] closing console")
-		log_window.visible = false
-		input_field.clear()
-		hide()
+#func _process(_delta: float) -> void:
+	#if Input.is_action_just_pressed("console.open"):
+		#print("[INFO] opening console")
+		#log_window.visible = true
+		#show()
+		#input_field.clear()
+		#if input_field:
+			#input_field.grab_focus()
+		#
+	#if Input.is_action_just_pressed("console.close"):
+		#print("[INFO] closing console")
+		#log_window.visible = false
+		#input_field.clear()
+		#hide()
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -56,7 +56,7 @@ func _execute_command(cmd: String) -> void:
 			print("[CONSOLE] quitting")
 			get_tree().quit()
 		"clear":
-			log_window.text = ""
+			oldcommand()
 		# dev section
 		"dev testmap":
 			notinusecommand()
@@ -72,20 +72,23 @@ func _execute_command(cmd: String) -> void:
 		# end of dev section
 		# test section
 		"devtest error":
+			print("[CONSOLE] Testing error...")
 			push_error("Testing error")
 		"devtest warn":
+			print("[CONSOLE] Testing warning...")
 			push_warning("Testing warning")
 		# end of test section
 		# useless section
 		"useless mj":
-			log_window.text = ""
-			print("[CONSOLE] ")
+			oldcommand()
 		"voidme":
 			oldcommand()
 		# give section
 		"give cords":
 			log_window.text = "cannot show cordinates here, please look into godot console or logs"
 			print("[CONSOLE] cords of ball: ", ball.position)
+		"give fps":
+			print("[CONSOLE] Current fps:", get_viewport().fps())
 		# end of give section
 		_:
 			log_window.text = "unknown command. please check that you entered it correctly."
