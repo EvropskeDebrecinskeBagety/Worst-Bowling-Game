@@ -1,2 +1,4 @@
 res://main.tscn
 res://scr/menu.gd
+res://scr/consol.gd
+res://scr/player.gd

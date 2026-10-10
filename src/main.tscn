@@ -25,9 +25,14 @@ normal_scale = 5.28
 radius = 0.84716797
 height = 1.6943359
 
+[sub_resource type="LabelSettings" id="LabelSettings_sjwaj"]
+font = ExtResource("5_7mycd")
+font_color = Color(0.6666667, 0.2509804, 0.25490198, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_6eo0t"]
 font = ExtResource("5_7mycd")
 font_size = 28
+font_color = Color(0.6666667, 0.2509804, 0.25490198, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_co0b0"]
 size = Vector3(0.12841797, 0.98727417, 0.089897156)
@@ -92,35 +97,30 @@ anchor_left = 0.67
 anchor_top = 0.95900005
 anchor_right = 1.0
 anchor_bottom = 0.994
-offset_left = -0.32958984
-offset_top = 0.44396973
-offset_right = -0.8800049
-offset_bottom = 0.5040283
-placeholder_text = "Enter command here"
+offset_left = -1011.3296
+offset_top = -479.55603
+offset_right = -1414.88
+offset_bottom = -486.49597
 max_length = 25
 context_menu_enabled = false
 emoji_menu_enabled = false
 shortcut_keys_enabled = false
+flat = true
 script = ExtResource("5_lquwl")
 input_field = NodePath(".")
 ball = NodePath("../../..")
-log_window = NodePath("TextEdit")
+log_window = NodePath("../TextEdit")
 
-[node name="TextEdit" type="TextEdit" parent="ball/Camera3D/ui/console" unique_id=962785651]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = -0.97400004
-anchor_right = 1.0
-offset_left = 1.0
-offset_top = 0.012001038
-offset_bottom = -2.0
-placeholder_text = "Logs here"
-editable = false
-context_menu_enabled = false
-emoji_menu_enabled = false
-shortcut_keys_enabled = false
+[node name="consolenote" type="Label" parent="ball/Camera3D/ui" unique_id=2092414376]
+layout_mode = 0
+offset_left = 225.0
+offset_top = 567.0
+offset_right = 272.0
+offset_bottom = 587.0
+text = "CONSOLE:"
+label_settings = SubResource("LabelSettings_sjwaj")
 
-[node name="Panel" type="Panel" parent="ball/Camera3D/ui" unique_id=778853084 node_paths=PackedStringArray("gamemenu", "achievmenu")]
+[node name="Panel" type="Panel" parent="ball/Camera3D/ui" unique_id=778853084 node_paths=PackedStringArray("gamemenu", "achievmenu", "consolebox", "consolenote")]
 layout_mode = 0
 offset_left = 222.0
 offset_top = 590.0
@@ -129,12 +129,15 @@ offset_bottom = 986.0
 script = ExtResource("5_272bh")
 gamemenu = NodePath(".")
 achievmenu = NodePath("../achievmenu")
+consolebox = NodePath("../console")
+consolenote = NodePath("../consolenote")
 
 [node name="pausedtex" type="Label" parent="ball/Camera3D/ui/Panel" unique_id=1876809479]
 layout_mode = 0
 offset_top = 7.0
 offset_right = 286.0
 offset_bottom = 53.0
+theme_override_colors/font_color = Color(0.6666667, 0.2509804, 0.25490198, 1)
 text = "PAUSED"
 label_settings = SubResource("LabelSettings_6eo0t")
 horizontal_alignment = 1
@@ -204,6 +207,27 @@ offset_top = 695.0
 offset_right = 1024.0
 offset_bottom = 986.0
 
+[node name="TextEdit" type="TextEdit" parent="ball/Camera3D/ui" unique_id=1220169536]
+visible = false
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+editable = false
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+middle_mouse_paste_enabled = false
+empty_selection_clipboard_enabled = false
+tab_input_mode = false
+virtual_keyboard_enabled = false
+
+[node name="Label3D" type="Label3D" parent="ball" unique_id=173536404]
+transform = Transform3D(0.003869821, -0.023976766, 0.999705, 0.016513418, 0.9995776, 0.023909733, -0.9998563, 0.01641602, 0.004264129, 0.027190164, 1.4400883, 0)
+text = "bugged caseoh"
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1923155407]
 transform = Transform3D(0.14709315, 0.8599014, -0.4888078, 0.7973457, 0.1893548, 0.5730483, 0.58532333, -0.47404045, -0.657786, -13.744074, 21.934046, -2.3170824)
 light_energy = 2.368
@@ -214,14 +238,19 @@ shadow_normal_bias = 0.0
 shadow_blur = 7.021
 
 [node name="fol_kuzelky" type="Node3D" parent="." unique_id=1819233925]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.721058, 0.060478687)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.721058, 6.2099514)
 
 [node name="kuz1" type="RigidBody3D" parent="fol_kuzelky" unique_id=518762740]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2346226, 6.0802927)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2346225, -0.14394438)
 disable_mode = 2
 input_capture_on_drag = true
 mass = 0.001
 gravity_scale = 1.491
+
+[node name="Label3D" type="Label3D" parent="fol_kuzelky/kuz1" unique_id=1239988870]
+transform = Transform3D(-0.038493976, -0.11940779, 0.99209875, -0.004629604, 0.9928453, 0.119318, -0.9992481, 0, -0.038771372, 0, 0.88798, -0.008172989)
+text = "Fry
+"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="fol_kuzelky/kuz1" unique_id=1753596857]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0034179688, 0.0011749268, 0.0012702942)
@@ -232,7 +261,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003710419, -0.0020751953, 0
 mesh = SubResource("BoxMesh_u0thq")
 
 [node name="kuz2" type="RigidBody3D" parent="fol_kuzelky" unique_id=306150870]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2346226, 6.26532)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2346225, 0.04108274)
 disable_mode = 2
 input_capture_on_drag = true
 mass = 0.001
@@ -246,12 +275,22 @@ shape = SubResource("BoxShape3D_co0b0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003710419, -0.0020751953, 0.0020202696)
 mesh = SubResource("BoxMesh_u0thq")
 
+[node name="Label3D2" type="Label3D" parent="fol_kuzelky/kuz2" unique_id=1713500000]
+transform = Transform3D(-0.038493976, -0.11940779, 0.99209875, -0.004629604, 0.9928453, 0.119318, -0.9992481, 0, -0.038771372, 0, 0.88798, -0.0036582947)
+text = "Fry
+"
+
 [node name="kuz3" type="RigidBody3D" parent="fol_kuzelky" unique_id=1623830445]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17152774, 1.2346226, 6.26532)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17152774, 1.2346225, 0.04108274)
 disable_mode = 2
 input_capture_on_drag = true
 mass = 0.001
 gravity_scale = 1.491
+
+[node name="Label3D3" type="Label3D" parent="fol_kuzelky/kuz3" unique_id=1660169836]
+transform = Transform3D(-0.038493976, -0.11940779, 0.99209875, -0.004629604, 0.9928453, 0.119318, -0.9992481, 0, -0.038771372, -0.015646204, 0.88798, -0.020632744)
+text = "Fry
+"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="fol_kuzelky/kuz3" unique_id=1519098935]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.002319336, -0.0069885254, 0.0042266846)
@@ -262,7 +301,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003710419, -0.0020751953, 0
 mesh = SubResource("BoxMesh_u0thq")
 
 [node name="kuz4" type="RigidBody3D" parent="fol_kuzelky" unique_id=102621742]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1913139, 1.2346226, 6.26532)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1913139, 1.2346225, 0.04108274)
 disable_mode = 2
 input_capture_on_drag = true
 mass = 0.001
@@ -275,6 +314,11 @@ shape = SubResource("BoxShape3D_co0b0")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="fol_kuzelky/kuz4" unique_id=1872632766]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003710419, -0.0020751953, 0.0020202696)
 mesh = SubResource("BoxMesh_u0thq")
+
+[node name="Label3D4" type="Label3D" parent="fol_kuzelky/kuz4" unique_id=559399254]
+transform = Transform3D(-0.038493976, -0.11940779, 0.99209875, -0.004629604, 0.9928453, 0.119318, -0.9992481, 0, -0.038771372, 0.026528597, 0.88798, -0.002421856)
+text = "Fry
+"
 
 [node name="deathBorder" type="Area3D" parent="." unique_id=311282126]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.382915, -1.552638)

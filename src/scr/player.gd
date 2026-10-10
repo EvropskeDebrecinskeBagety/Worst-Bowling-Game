@@ -26,7 +26,9 @@ func _on_death_border_body_entered(body: CharacterBody3D) -> void:
 	print("changing to death.tscn")
 	get_tree().change_scene_to_file("res://death.tscn")
 
-func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("exit"):
-		print("quitting from player.gd")
-		get_tree().quit()
+
+# replaced with menu
+#func _process(_delta: float) -> void:
+	#if Input.is_action_just_pressed("exit"):
+		#print("quitting from player.gd")
+		#get_tree().quit()
