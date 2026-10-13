@@ -16,7 +16,7 @@ general/accessibility_support=2
 
 config/name="Worst Bowling Game"
 config/description="Worst Bowling Game"
-config/version="2026.10.1.4"
+config/version="2026.10.2.0"
 config/tags=PackedStringArray("game")
 run/main_scene="uid://dq1hgsvlyespb"
 run/enable_alt_space_menu=true
@@ -33,7 +33,7 @@ boot_splash/stretch_mode=0
 boot_splash/use_filter=false
 boot_splash/image="uid://cy37qeomkjr4h"
 config/icon="uid://eibryjj0vf0v"
-boot_splash/minimum_display_time=931
+boot_splash/minimum_display_time=500
 
 [debug]
 

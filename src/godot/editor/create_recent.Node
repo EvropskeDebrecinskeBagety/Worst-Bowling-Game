@@ -1,8 +1,8 @@
+Label
 MeshInstance3D
 StaticBody3D
 Label3D
 TextEdit
-Label
 Panel
 HSeparator
 Button

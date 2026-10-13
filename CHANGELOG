@@ -21,6 +21,11 @@ v2026.10.2.0
 - Recolored platform to dark gray
 - Recolored pins to match the color of fryes
 - egg
+- Optimized script in consol.gd
+- Added support for custom maps (half functioning)
+- Mac version now as "org.EvropskeDebrecinskeBagety.WorstBowlingGame"
+- Caseoh bigger (more realistic)
+- Moved fry1 more apart of other fryes
 
 2026.10.1.4 (c3a8898)
 - Caseoh (the ball) is now more bigger

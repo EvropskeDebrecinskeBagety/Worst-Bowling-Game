@@ -7,6 +7,9 @@ extends Control
 # yes this is NOT serious.
 var helloworld = print
 
+# the log window for the console is old and not working. PLEASE DO NOT TRY TO REPAIR IT YOURSELF.
+
+
 func _ready() -> void:
 	hide()
 func balltotest():
@@ -21,20 +24,6 @@ func oldcommand():
 func notinusecommand():
 	log_window.text = "This command is not use currently, it may be reserved for future use"
 	print("[WARN] This command is not in use currently, it may be reserved for future use")
-#func _process(_delta: float) -> void:
-	#if Input.is_action_just_pressed("console.open"):
-		#print("[INFO] opening console")
-		#log_window.visible = true
-		#show()
-		#input_field.clear()
-		#if input_field:
-			#input_field.grab_focus()
-		#
-	#if Input.is_action_just_pressed("console.close"):
-		#print("[INFO] closing console")
-		#log_window.visible = false
-		#input_field.clear()
-		#hide()
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -45,12 +34,17 @@ func _unhandled_input(event: InputEvent) -> void:
 			input_field.clear()
 
 
-
 func _execute_command(cmd: String) -> void:
-	match cmd.to_lower():
+	var parts = cmd.to_lower().split(" ", false)
+	if parts.is_empty():
+		return
+		
+	var main_cmd = parts[0]
+	
+	match main_cmd:
 		"help":
-			log_window.text = "available command: help, quit, dev, give, clear"
-			print("[CONSOLE] available command: help, quit, dev, give, clear")
+			log_window.text = "available command: help, quit, dev, give, clear, map"
+			print("[CONSOLE] available command: help, quit, dev, give, clear, map")
 		"quit":
 			log_window.text = "quitting"
 			print("[CONSOLE] quitting")
@@ -58,42 +52,70 @@ func _execute_command(cmd: String) -> void:
 		"clear":
 			oldcommand()
 		# dev section
-		"dev testmap":
-			notinusecommand()
-		"dev hellomoto":
-			log_window.text = "Hello moto *tune doesnt start playing due to copyright*"
-			print("[CONSOLE] Hello moto *tune doesnt start playing due to copyright*")
-		"dev alahakbar":
-			oldcommand()
-		"dev parkour":
-			log_window.text = "teleporting into parkour..."
-			print("[CONSOLE] teleporting into parkour...")
-			get_tree().change_scene_to_file("res://parkur.tscn")
-		"dev studiogamecrash":
-			print(get_viewport().fps())
-			print(get_viewport().whatever())
-			print(get_viewport().breastcancer())
-		# end of dev section
-		# test section
-		"devtest error":
-			print("[CONSOLE] Testing error...")
-			push_error("Testing error")
-		"devtest warn":
-			print("[CONSOLE] Testing warning...")
-			push_warning("Testing warning")
-		# end of test section
-		# useless section
-		"useless mj":
-			oldcommand()
+		"dev":
+			if parts.size() > 1:
+				match parts[1]:
+					"testmap":
+						notinusecommand()
+					"hellomoto":
+						log_window.text = "Hello moto *tune doesnt start playing due to copyright*"
+						print("[CONSOLE] Hello moto *tune doesnt start playing due to copyright*")
+					"alahakbar":
+						oldcommand()
+					"parkour":
+						log_window.text = "teleporting into parkour..."
+						print("[CONSOLE] teleporting into parkour...")
+						get_tree().change_scene_to_file("res://parkur.tscn")
+					"studiogamecrash":
+						print(get_viewport().fps())
+						print(get_viewport().whatever())
+						print(get_viewport().breastcancer())
+					_:
+						log_window.text = "unknown dev command"
+			else:
+				log_window.text = "missing dev subcommand"
+		"devtest":
+			if parts.size() > 1:
+				match parts[1]:
+					"error":
+						print("[CONSOLE] Testing error...")
+						push_error("Testing error")
+					"warn":
+						print("[CONSOLE] Testing warning...")
+						push_warning("Testing warning")
+		"useless":
+			if parts.size() > 1 and parts[1] == "mj":
+				oldcommand()
 		"voidme":
 			oldcommand()
-		# give section
-		"give cords":
-			log_window.text = "cannot show cordinates here, please look into godot console or logs"
-			print("[CONSOLE] cords of ball: ", ball.position)
-		"give fps":
-			print("[CONSOLE] Current fps:", get_viewport().fps())
-		# end of give section
+		"give":
+			if parts.size() > 1:
+				match parts[1]:
+					"cords":
+						print("[CONSOLE] cords of ball: ", ball.position)
+					"fps":
+						print("[CONSOLE] Current fps: ", get_viewport().fps())
+		"map":
+			if parts.size() > 1:
+				var map_name = parts[1]
+				open_map(map_name)
+			else:
+				print("[CONSOLE] Usage: map <mapName>")
 		_:
 			log_window.text = "unknown command. please check that you entered it correctly."
 			print("[CONSOLE] unknown command: ", cmd)
+
+
+func open_map(map_name: String) -> void:
+	var exe_dir = OS.get_executable_path().get_base_dir()
+	var target_path = exe_dir.path_join("../maps/" + map_name + "/map.tscn")
+	
+	if FileAccess.file_exists(target_path):
+		print("[CONSOLE] Opening map from path: ", target_path)
+		var packed_scene = ResourceLoader.load(target_path)
+		if packed_scene:
+			get_tree().change_scene_to_packed(packed_scene)
+		else:
+			print("[ERROR] Failed to load resource at: ", target_path)
+	else:
+		print("[CONSOLE] Map not found at path: ", target_path)

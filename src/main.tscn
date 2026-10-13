@@ -18,15 +18,15 @@ albedo_color = Color(0.44291076, 0.44291076, 0.44291073, 1)
 size = Vector3(2.9326172, 0.01222074, 14.02721)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0xm2m"]
-radius = 0.8521427
+radius = 0.9253834
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mycd"]
 albedo_texture = ExtResource("3_h2yge")
 normal_scale = 5.28
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_h2yge"]
-radius = 0.84716797
-height = 1.6943359
+radius = 0.9169922
+height = 1.8339844
 
 [sub_resource type="LabelSettings" id="LabelSettings_sjwaj"]
 font = ExtResource("5_7mycd")
@@ -77,7 +77,7 @@ mesh = SubResource("BoxMesh_r3tlg")
 
 [node name="ball" parent="." unique_id=1851737853 instance=ExtResource("1_ig7tw")]
 physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09695244, 9.119639, -5.253885)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09695244, 8.45031, -5.253885)
 script = ExtResource("2_0xm2m")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="ball" unique_id=1688611171]
@@ -241,6 +241,7 @@ virtual_keyboard_enabled = false
 [node name="Label3D" type="Label3D" parent="ball" unique_id=173536404]
 transform = Transform3D(0.003869821, -0.023976766, 0.999705, 0.016513418, 0.9995776, 0.023909733, -0.9998563, 0.01641602, 0.004264129, 0.027190164, 1.4400883, 0)
 text = "bugged caseoh"
+uppercase = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1923155407]
 transform = Transform3D(0.14709315, 0.8599014, -0.4888078, 0.7973457, 0.1893548, 0.5730483, 0.58532333, -0.47404045, -0.657786, -13.744074, 21.934046, -2.3170824)
@@ -255,7 +256,7 @@ shadow_blur = 7.021
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.721058, 6.2099514)
 
 [node name="kuz1" type="RigidBody3D" parent="fol_kuzelky" unique_id=518762740]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2346225, -0.14394438)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2346225, -0.2547121)
 disable_mode = 2
 input_capture_on_drag = true
 mass = 0.001
@@ -265,6 +266,7 @@ gravity_scale = 1.491
 transform = Transform3D(-0.038493976, -0.11940779, 0.99209875, -0.004629604, 0.9928453, 0.119318, -0.9992481, 0, -0.038771372, 0, 0.88798, -0.008172989)
 text = "Fry
 "
+uppercase = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="fol_kuzelky/kuz1" unique_id=1753596857]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0034179688, 0.0011749268, 0.0012702942)
@@ -295,6 +297,7 @@ mesh = SubResource("BoxMesh_u0thq")
 transform = Transform3D(-0.038493976, -0.11940779, 0.99209875, -0.004629604, 0.9928453, 0.119318, -0.9992481, 0, -0.038771372, 0, 0.88798, -0.0036582947)
 text = "Fry
 "
+uppercase = true
 
 [node name="kuz3" type="RigidBody3D" parent="fol_kuzelky" unique_id=1623830445]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17152774, 1.2346225, 0.04108274)
@@ -307,6 +310,7 @@ gravity_scale = 1.491
 transform = Transform3D(-0.038493976, -0.11940779, 0.99209875, -0.004629604, 0.9928453, 0.119318, -0.9992481, 0, -0.038771372, -0.015646204, 0.88798, -0.020632744)
 text = "Fry
 "
+uppercase = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="fol_kuzelky/kuz3" unique_id=1519098935]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.002319336, -0.0069885254, 0.0042266846)
@@ -337,6 +341,7 @@ mesh = SubResource("BoxMesh_u0thq")
 transform = Transform3D(-0.038493976, -0.11940779, 0.99209875, -0.004629604, 0.9928453, 0.119318, -0.9992481, 0, -0.038771372, 0.026528597, 0.88798, -0.002421856)
 text = "Fry
 "
+uppercase = true
 
 [node name="deathBorder" type="Area3D" parent="." unique_id=311282126]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.382915, -1.552638)
