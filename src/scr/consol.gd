@@ -69,6 +69,10 @@ func _execute_command(cmd: String) -> void:
 			log_window.text = "teleporting into parkour..."
 			print("[CONSOLE] teleporting into parkour...")
 			get_tree().change_scene_to_file("res://parkur.tscn")
+		"dev studiogamecrash":
+			print(get_viewport().fps())
+			print(get_viewport().whatever())
+			print(get_viewport().breastcancer())
 		# end of dev section
 		# test section
 		"devtest error":

@@ -9,10 +9,13 @@
 [ext_resource type="Environment" path="/home/filik19/Projekty/crappy-ball/src/envs/environment.tres" id="6_7mycd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r3tlg"]
-size = Vector3(2.9297867, 5.327693, 14.025397)
+size = Vector3(2.9297867, 1.3426795, 14.025397)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cs237"]
+albedo_color = Color(0.44291076, 0.44291076, 0.44291073, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_r3tlg"]
-size = Vector3(2.9326172, 0.048855543, 14.02721)
+size = Vector3(2.9326172, 0.01222074, 14.02721)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0xm2m"]
 radius = 0.8521427
@@ -37,6 +40,9 @@ font_color = Color(0.6666667, 0.2509804, 0.25490198, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_co0b0"]
 size = Vector3(0.12841797, 0.98727417, 0.089897156)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yvl6h"]
+albedo_color = Color(0.60693914, 0.46909493, 1.92523e-07, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_u0thq"]
 size = Vector3(0.12750244, 0.9958496, 0.08805847)
 
@@ -48,17 +54,25 @@ size = Vector3(269.5542, 0.52038574, 239.28967)
 [sub_resource type="BoxShape3D" id="BoxShape3D_mdiuu"]
 size = Vector3(97.75583, 0.82714844, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1vmsu"]
+
+[sub_resource type="TextMesh" id="TextMesh_gbvnj"]
+material = SubResource("StandardMaterial3D_1vmsu")
+text = "Traktor"
+uppercase = true
+
 [node name="Node3D" type="Node3D" unique_id=972202778]
 
 [node name="plat" type="StaticBody3D" parent="." unique_id=1186330218]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.9978313, -1.552638)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="plat" unique_id=859373680]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008289337, -2.2192516, 1.4746537)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008289337, -0.22674465, 1.4746537)
 shape = SubResource("BoxShape3D_r3tlg")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="plat" unique_id=44481480]
-transform = Transform3D(1, 0, 0, 0, 108.811676, 0, 0, 0, 1, -0.0073242188, -2.2315788, 1.4745197)
+transform = Transform3D(1, 0, 0, 0, 108.811676, 0, 0, 0, 1, -0.0073242188, -0.23843193, 1.4745197)
+material_override = SubResource("StandardMaterial3D_cs237")
 mesh = SubResource("BoxMesh_r3tlg")
 
 [node name="ball" parent="." unique_id=1851737853 instance=ExtResource("1_ig7tw")]
@@ -258,6 +272,7 @@ shape = SubResource("BoxShape3D_co0b0")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="fol_kuzelky/kuz1" unique_id=383730132]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003710419, -0.0020751953, 0.0018143654)
+material_override = SubResource("StandardMaterial3D_yvl6h")
 mesh = SubResource("BoxMesh_u0thq")
 
 [node name="kuz2" type="RigidBody3D" parent="fol_kuzelky" unique_id=306150870]
@@ -273,6 +288,7 @@ shape = SubResource("BoxShape3D_co0b0")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="fol_kuzelky/kuz2" unique_id=827571891]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003710419, -0.0020751953, 0.0020202696)
+material_override = SubResource("StandardMaterial3D_yvl6h")
 mesh = SubResource("BoxMesh_u0thq")
 
 [node name="Label3D2" type="Label3D" parent="fol_kuzelky/kuz2" unique_id=1713500000]
@@ -298,6 +314,7 @@ shape = SubResource("BoxShape3D_co0b0")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="fol_kuzelky/kuz3" unique_id=1689140910]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003710419, -0.0020751953, 0.0020202696)
+material_override = SubResource("StandardMaterial3D_yvl6h")
 mesh = SubResource("BoxMesh_u0thq")
 
 [node name="kuz4" type="RigidBody3D" parent="fol_kuzelky" unique_id=102621742]
@@ -313,6 +330,7 @@ shape = SubResource("BoxShape3D_co0b0")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="fol_kuzelky/kuz4" unique_id=1872632766]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003710419, -0.0020751953, 0.0020202696)
+material_override = SubResource("StandardMaterial3D_yvl6h")
 mesh = SubResource("BoxMesh_u0thq")
 
 [node name="Label3D4" type="Label3D" parent="fol_kuzelky/kuz4" unique_id=559399254]
@@ -342,6 +360,13 @@ visible = false
 shape = SubResource("BoxShape3D_mdiuu")
 disabled = true
 debug_fill = false
+
+[node name="gaybody" type="StaticBody3D" parent="." unique_id=1885691488]
+transform = Transform3D(-0.0020406889, 0, -0.9999979, 0, 1, 0, 0.9999979, 0, -0.0020406889, -1.4977646, 6.6469154, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="gaybody" unique_id=1912534894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.49325538, 0, 0, 0)
+mesh = SubResource("TextMesh_gbvnj")
 
 [connection signal="pressed" from="ball/Camera3D/ui/Panel/qui" to="ball/Camera3D/ui/Panel" method="_on_quit_pressed"]
 [connection signal="pressed" from="ball/Camera3D/ui/Panel/unpa" to="ball/Camera3D/ui/Panel" method="_on_unpause_button_pressed"]

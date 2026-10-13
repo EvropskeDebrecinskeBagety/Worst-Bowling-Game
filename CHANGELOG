@@ -16,7 +16,11 @@ v2026.10.2.0
 - Moved some consol scripts into menu script
 - Fixed version numbering in CHANGELOG file
 - New nametags
-- Added command 'give fps' to print out fps into console
+- public test github branch deleted due to github not wanting to do its job
+- Changed FPS limit to 69fps
+- Recolored platform to dark gray
+- Recolored pins to match the color of fryes
+- egg
 
 2026.10.1.4 (c3a8898)
 - Caseoh (the ball) is now more bigger

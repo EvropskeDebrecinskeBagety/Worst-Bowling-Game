@@ -1,3 +1,5 @@
+MeshInstance3D
+StaticBody3D
 Label3D
 TextEdit
 Label
@@ -10,5 +12,3 @@ StaticBody2D
 Camera2D
 CharacterBody2D
 Camera3D
-MeshInstance3D
-CollisionShape3D
