@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://bo47uqg5iojxh"]
+
+[ext_resource type="FontFile" uid="uid://bnd5exjksp7kt" path="res://BAUHS93.ttf" id="1_lti8b"]
+[ext_resource type="Script" uid="uid://dun28gxml2lhw" path="res://scr/mainmenu.gd" id="1_ouk20"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sjwaj"]
+bg_color = Color(0.62172675, 0.41275543, 0.37649953, 1)
+skew = Vector2(0, -0.1)
+border_blend = true
+corner_detail = 20
+shadow_size = 8
+
+[sub_resource type="InputEventKey" id="InputEventKey_ouk20"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_272bh"]
+events = [SubResource("InputEventKey_ouk20")]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6eo0t"]
+font = ExtResource("1_lti8b")
+font_size = 42
+font_color = Color(0.77657974, 0.24800277, 0.2240467, 1)
+
+[node name="Menu" type="Control" unique_id=477132403]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ouk20")
+
+[node name="BackImage" type="TextureRect" parent="." unique_id=1014453166]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Panel" type="Panel" parent="." unique_id=469922260]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 93.0
+offset_right = 543.0
+offset_bottom = 991.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_sjwaj")
+
+[node name="Start" type="Button" parent="Panel" unique_id=1445698640]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 222.0
+offset_right = 437.0
+offset_bottom = 274.0
+theme_override_colors/font_color = Color(0.78775936, 0.7877592, 0.78775924, 1)
+theme_override_colors/font_pressed_color = Color(0.79607844, 0.33333334, 0.36862746, 1)
+theme_override_colors/font_hover_color = Color(0.4545241, 0.45452416, 0.45452517, 1)
+theme_override_colors/font_disabled_color = Color(0.24840063, 0.2484, 0.24840015, 0.5019608)
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 25
+text = "Start"
+flat = true
+alignment = 0
+
+[node name="quit" type="Button" parent="Panel" unique_id=1071795233]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 792.0
+offset_right = 439.0
+offset_bottom = 844.0
+theme_override_colors/font_color = Color(0.78775936, 0.7877592, 0.78775924, 1)
+theme_override_colors/font_pressed_color = Color(0.79607844, 0.33333334, 0.36862746, 1)
+theme_override_colors/font_hover_color = Color(0.4545241, 0.45452416, 0.45452517, 1)
+theme_override_colors/font_disabled_color = Color(0.24840063, 0.2484, 0.24840015, 0.5019608)
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 25
+shortcut = SubResource("Shortcut_272bh")
+text = "Quit"
+flat = true
+alignment = 0
+
+[node name="Label" type="Label" parent="Panel" unique_id=1273580750]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 464.0
+offset_bottom = 150.0
+text = "Worst Bowling Game"
+label_settings = SubResource("LabelSettings_6eo0t")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Panel/Start" to="." method="start"]
+[connection signal="pressed" from="Panel/quit" to="." method="quit"]

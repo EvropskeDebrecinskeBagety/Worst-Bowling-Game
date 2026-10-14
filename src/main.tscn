@@ -18,15 +18,15 @@ albedo_color = Color(0.44291076, 0.44291076, 0.44291073, 1)
 size = Vector3(2.9326172, 0.01222074, 14.02721)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0xm2m"]
-radius = 0.9253834
+radius = 0.9781475
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mycd"]
 albedo_texture = ExtResource("3_h2yge")
 normal_scale = 5.28
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_h2yge"]
-radius = 0.9169922
-height = 1.8339844
+radius = 0.9741211
+height = 1.9482422
 
 [sub_resource type="LabelSettings" id="LabelSettings_sjwaj"]
 font = ExtResource("5_7mycd")
@@ -47,7 +47,7 @@ albedo_color = Color(0.60693914, 0.46909493, 1.92523e-07, 1)
 size = Vector3(0.12750244, 0.9958496, 0.08805847)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
-size = Vector3(269.5542, 0.52038574, 239.28967)
+size = Vector3(27.73701, 0.52038574, 60.158596)
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_7v02q"]
 
@@ -77,7 +77,7 @@ mesh = SubResource("BoxMesh_r3tlg")
 
 [node name="ball" parent="." unique_id=1851737853 instance=ExtResource("1_ig7tw")]
 physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09695244, 8.45031, -5.253885)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09695244, 8.351764, -5.253885)
 script = ExtResource("2_0xm2m")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="ball" unique_id=1688611171]
@@ -152,7 +152,7 @@ offset_top = 7.0
 offset_right = 286.0
 offset_bottom = 53.0
 theme_override_colors/font_color = Color(0.6666667, 0.2509804, 0.25490198, 1)
-text = "PAUSED"
+text = "MENU"
 label_settings = SubResource("LabelSettings_6eo0t")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -253,7 +253,7 @@ shadow_normal_bias = 0.0
 shadow_blur = 7.021
 
 [node name="fol_kuzelky" type="Node3D" parent="." unique_id=1819233925]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.721058, 6.2099514)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.707302, 6.2099514)
 
 [node name="kuz1" type="RigidBody3D" parent="fol_kuzelky" unique_id=518762740]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2346225, -0.2547121)
@@ -347,7 +347,7 @@ uppercase = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.382915, -1.552638)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="deathBorder" unique_id=1253973280]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4225235, 0.15573883, 1.3072691)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15738583, 0.15573883, 1.2700319)
 shape = SubResource("BoxShape3D_g4v7s")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=378954895]
@@ -367,7 +367,7 @@ disabled = true
 debug_fill = false
 
 [node name="gaybody" type="StaticBody3D" parent="." unique_id=1885691488]
-transform = Transform3D(-0.0020406889, 0, -0.9999979, 0, 1, 0, 0.9999979, 0, -0.0020406889, -1.4977646, 6.6469154, 0)
+transform = Transform3D(0.01743536, 0, 0.999848, 0, 1, 0, -0.999848, 0, 0.01743536, 1.4577833, 6.6469154, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="gaybody" unique_id=1912534894]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.49325538, 0, 0, 0)

@@ -107,15 +107,21 @@ func _execute_command(cmd: String) -> void:
 
 
 func open_map(map_name: String) -> void:
-	var exe_dir = OS.get_executable_path().get_base_dir()
-	var target_path = exe_dir.path_join("../maps/" + map_name + "/map.tscn")
+	var gamedir = OS.get_executable_path().get_base_dir().path_join("../../")
+	var mappath = gamedir.path_join("maps/" + map_name + "/map.tscn")
+	var mapinfo = gamedir.path_join("maps/" + map_name + "/info.json")
 	
-	if FileAccess.file_exists(target_path):
-		print("[CONSOLE] Opening map from path: ", target_path)
-		var packed_scene = ResourceLoader.load(target_path)
+	if FileAccess.file_exists(mapinfo):
+		print("[CONSOLE] Looking into " + mapinfo)
+	else:
+		print("[ERROR] file '" + mapinfo + "' does not exist")
+	
+	if FileAccess.file_exists(mappath):
+		print("[CONSOLE] Opening map from path: ", mappath)
+		var packed_scene = ResourceLoader.load(mappath)
 		if packed_scene:
 			get_tree().change_scene_to_packed(packed_scene)
 		else:
-			print("[ERROR] Failed to load resource at: ", target_path)
+			print("[ERROR] Failed to load resource at: ", mappath)
 	else:
-		print("[CONSOLE] Map not found at path: ", target_path)
+		print("[ERROR] Map not found at path: ", mappath)

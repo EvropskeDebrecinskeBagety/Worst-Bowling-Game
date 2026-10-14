@@ -16,9 +16,9 @@ general/accessibility_support=2
 
 config/name="Worst Bowling Game"
 config/description="Worst Bowling Game"
-config/version="2026.10.2.0"
+config/version="2026.10.2.1"
 config/tags=PackedStringArray("game")
-run/main_scene="uid://dq1hgsvlyespb"
+run/main_scene="uid://bo47uqg5iojxh"
 run/enable_alt_space_menu=true
 config/use_hidden_project_data_directory=false
 config/use_custom_user_dir=true

@@ -1,4 +1,15 @@
-v2026.10.2.0
+v2026.10.2.1
+- Default ball position moved a little down
+- Added mainmenu
+- Daeth hitbox is a lot smaller
+- Released new map development kit
+- Fixed bugs
+- Optimized code
+- Revamped launcher to minimalistic to launch another executable
+- Made egg not be an egg
+- Moved frys hitbox to match with plats hitbox
+- Made case the ball bigger
+- Added background image for menu
 
 2026.10.2.0
 - Pressing Esc will now trigger a popup instead of closing
