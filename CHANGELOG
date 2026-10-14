@@ -11,7 +11,7 @@ v2026.10.2.1
 - Made case the ball bigger
 - Added background image for menu
 
-2026.10.2.0
+2026.10.2.0 (f5f8950)
 - Pressing Esc will now trigger a popup instead of closing
 - Adjusted Main scene camera FOV to be smaller
 - Will now take longer for the daeth scene to activate
