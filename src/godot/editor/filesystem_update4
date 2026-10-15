@@ -1,0 +1,8 @@
+res://outmaps/wbg_grass.tscn
+res://scr/mainmenu.gd
+res://menu.tscn
+res://scr/consol.gd
+res://parkur.tscn
+res://scr/quit.gd
+res://scr/2dconsol.gd
+res://scr/menupartychoose.gd

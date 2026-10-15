@@ -65,9 +65,6 @@ func _execute_command(cmd: String) -> void:
 		"dev hellomoto":
 			log_window.text = "Hello moto *tune doesnt start playing due to copyright*"
 			print("[CONSOLE] Hello moto *tune doesnt start playing due to copyright*")
-		"dev alahakbar":
-			log_window.text = "'Today a plane crashed into the towers and our mothers too'"
-			print("[CONSOLE] 'Today a plane crashed into the towers and our mothers too'")
 		"dev parkour":
 			cannotusehere()
 		# end of dev section

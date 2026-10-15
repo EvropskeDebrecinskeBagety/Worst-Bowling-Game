@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://btx2wawjv8uye"]
+
+[ext_resource type="Script" uid="uid://c1l15lmwfbwyw" path="res://scr/thirdmapquit.gd" id="1_8uh7m"]
+[ext_resource type="Texture2D" uid="uid://q6eivhn0x6ja" path="res://caseoh-2.webp" id="1_37kl0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6eo0t"]
+font_size = 81
+font_color = Color(1, 0.34133852, 0.6557646, 1)
+
+[node name="Test" type="Control" unique_id=2058489287]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8uh7m")
+
+[node name="Label" type="Label" parent="." unique_id=2029318486]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 457.0
+offset_right = 1881.0
+offset_bottom = 601.0
+text = "Congratulation!
+https://en.wikipedia.org/wiki/Example.com"
+label_settings = SubResource("LabelSettings_6eo0t")
+
+[node name="Caseoh2" type="Sprite2D" parent="." unique_id=1870044692]
+position = Vector2(1552, 879)
+texture = ExtResource("1_37kl0")

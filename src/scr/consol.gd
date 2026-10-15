@@ -9,7 +9,6 @@ var helloworld = print
 
 # the log window for the console is old and not working. PLEASE DO NOT TRY TO REPAIR IT YOURSELF.
 
-
 func _ready() -> void:
 	hide()
 func balltotest():
@@ -43,8 +42,8 @@ func _execute_command(cmd: String) -> void:
 	
 	match main_cmd:
 		"help":
-			log_window.text = "available command: help, quit, dev, give, clear, map"
-			print("[CONSOLE] available command: help, quit, dev, give, clear, map")
+			log_window.text = "available command: help, quit, give, clear, map"
+			print("[CONSOLE] available commands: help, quit, give, clear, map")
 		"quit":
 			log_window.text = "quitting"
 			print("[CONSOLE] quitting")
@@ -60,12 +59,6 @@ func _execute_command(cmd: String) -> void:
 					"hellomoto":
 						log_window.text = "Hello moto *tune doesnt start playing due to copyright*"
 						print("[CONSOLE] Hello moto *tune doesnt start playing due to copyright*")
-					"alahakbar":
-						oldcommand()
-					"parkour":
-						log_window.text = "teleporting into parkour..."
-						print("[CONSOLE] teleporting into parkour...")
-						get_tree().change_scene_to_file("res://parkur.tscn")
 					"studiogamecrash":
 						print(get_viewport().fps())
 						print(get_viewport().whatever())
@@ -93,8 +86,6 @@ func _execute_command(cmd: String) -> void:
 				match parts[1]:
 					"cords":
 						print("[CONSOLE] cords of ball: ", ball.position)
-					"fps":
-						print("[CONSOLE] Current fps: ", get_viewport().fps())
 		"map":
 			if parts.size() > 1:
 				var map_name = parts[1]

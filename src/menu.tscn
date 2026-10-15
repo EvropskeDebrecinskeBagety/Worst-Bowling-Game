@@ -2,10 +2,12 @@
 
 [ext_resource type="FontFile" uid="uid://bnd5exjksp7kt" path="res://BAUHS93.ttf" id="1_lti8b"]
 [ext_resource type="Script" uid="uid://dun28gxml2lhw" path="res://scr/mainmenu.gd" id="1_ouk20"]
+[ext_resource type="FontFile" uid="uid://cm0tm67b1gexx" path="res://BebasNeue-Regular.ttf" id="3_mae5d"]
+[ext_resource type="Script" uid="uid://ckm1xjbqksg32" path="res://scr/menupartychoose.gd" id="4_4hy44"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sjwaj"]
 bg_color = Color(0.62172675, 0.41275543, 0.37649953, 1)
-skew = Vector2(0, -0.1)
+skew = Vector2(0, -0.095)
 border_blend = true
 corner_detail = 20
 shadow_size = 8
@@ -22,7 +24,34 @@ font = ExtResource("1_lti8b")
 font_size = 42
 font_color = Color(0.77657974, 0.24800277, 0.2240467, 1)
 
-[node name="Menu" type="Control" unique_id=477132403]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6eo0t"]
+bg_color = Color(0.62352943, 0.4117647, 0.3764706, 1)
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gbvnj"]
+bg_color = Color(0.44587487, 0.27934903, 0.25194556, 1)
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jq3kw"]
+bg_color = Color(0.7957846, 0.53809226, 0.22529212, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vmsu"]
+bg_color = Color(0.20152655, 0.20152661, 0.20152646, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_25i3r"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ceb0m"]
+bg_color = Color(0.32544094, 0.32544088, 0.32544088, 1)
+
+[sub_resource type="InputEventKey" id="InputEventKey_mae5d"]
+device = -1
+keycode = 4194308
+
+[sub_resource type="Shortcut" id="Shortcut_ouk20"]
+events = [SubResource("InputEventKey_mae5d")]
+
+[node name="Menu" type="Control" unique_id=477132403 node_paths=PackedStringArray("mapchoose")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,8 +59,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ouk20")
+mapchoose = NodePath("Panel/mapchoose")
 
 [node name="BackImage" type="TextureRect" parent="." unique_id=1014453166]
+custom_minimum_size = Vector2(1920, 1080)
+custom_maximum_size = Vector2(1920, 1080)
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
@@ -50,6 +82,7 @@ offset_left = 27.0
 offset_top = 222.0
 offset_right = 437.0
 offset_bottom = 274.0
+tooltip_text = "Starts the game into the default scene"
 theme_override_colors/font_color = Color(0.78775936, 0.7877592, 0.78775924, 1)
 theme_override_colors/font_pressed_color = Color(0.79607844, 0.33333334, 0.36862746, 1)
 theme_override_colors/font_hover_color = Color(0.4545241, 0.45452416, 0.45452517, 1)
@@ -60,12 +93,30 @@ text = "Start"
 flat = true
 alignment = 0
 
+[node name="map" type="Button" parent="Panel" unique_id=2130911351]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 272.0
+offset_right = 439.0
+offset_bottom = 324.0
+tooltip_text = "Opens a menu to choose a map"
+theme_override_colors/font_color = Color(0.78775936, 0.7877592, 0.78775924, 1)
+theme_override_colors/font_pressed_color = Color(0.79607844, 0.33333334, 0.36862746, 1)
+theme_override_colors/font_hover_color = Color(0.4545241, 0.45452416, 0.45452517, 1)
+theme_override_colors/font_disabled_color = Color(0.24840063, 0.2484, 0.24840015, 0.5019608)
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 25
+text = "Choose map"
+flat = true
+alignment = 0
+
 [node name="quit" type="Button" parent="Panel" unique_id=1071795233]
 layout_mode = 0
 offset_left = 27.0
 offset_top = 792.0
 offset_right = 439.0
 offset_bottom = 844.0
+tooltip_text = "Quits the game"
 theme_override_colors/font_color = Color(0.78775936, 0.7877592, 0.78775924, 1)
 theme_override_colors/font_pressed_color = Color(0.79607844, 0.33333334, 0.36862746, 1)
 theme_override_colors/font_hover_color = Color(0.4545241, 0.45452416, 0.45452517, 1)
@@ -87,5 +138,150 @@ label_settings = SubResource("LabelSettings_6eo0t")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="mapchoose" type="Panel" parent="Panel" unique_id=1224458832]
+layout_mode = 0
+offset_left = 481.0
+offset_top = 23.0
+offset_right = 1414.0
+offset_bottom = 921.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6eo0t")
+
+[node name="bar" type="Panel" parent="Panel/mapchoose" unique_id=263041604]
+layout_mode = 0
+offset_right = 933.0
+offset_bottom = 21.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gbvnj")
+
+[node name="infobar" type="Panel" parent="Panel/mapchoose/bar" unique_id=1868997044]
+layout_mode = 0
+offset_top = 21.0
+offset_right = 933.0
+offset_bottom = 78.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jq3kw")
+
+[node name="Label" type="Label" parent="Panel/mapchoose/bar/infobar" unique_id=1290964762]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 930.0
+offset_bottom = 27.0
+theme_override_fonts/font = ExtResource("3_mae5d")
+theme_override_font_sizes/font_size = 20
+text = "Only maps included with the game are available here"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Button" type="Button" parent="Panel/mapchoose/bar/infobar" unique_id=1793002266]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 25.0
+offset_right = 643.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0.7882353, 0.7882353, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.79607844, 0.33333334, 0.36862746, 1)
+theme_override_colors/font_hover_color = Color(0.45490196, 0.45490196, 0.45490196, 1)
+theme_override_colors/font_disabled_color = Color(0.24705882, 0.24705882, 0.24705882, 0.5019608)
+theme_override_fonts/font = ExtResource("3_mae5d")
+theme_override_font_sizes/font_size = 19
+text = "CHOOSE A THIRD PARTY MAP"
+flat = true
+
+[node name="Button" type="Button" parent="Panel/mapchoose/bar" unique_id=1976530169]
+layout_mode = 0
+offset_left = 913.0
+offset_top = 1.0
+offset_right = 932.0
+offset_bottom = 20.0
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_1vmsu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_25i3r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ceb0m")
+shortcut = SubResource("Shortcut_ouk20")
+text = "X"
+autowrap_trim_flags = 0
+clip_text = true
+
+[node name="wbg_grass" type="Panel" parent="Panel/mapchoose" unique_id=1630514936]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 96.0
+offset_right = 133.0
+offset_bottom = 201.0
+
+[node name="open" type="Button" parent="Panel/mapchoose/wbg_grass" unique_id=228535441]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 72.0
+offset_right = 118.0
+offset_bottom = 103.0
+text = "Open"
+
+[node name="Label" type="Label" parent="Panel/mapchoose/wbg_grass" unique_id=50717334]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 118.0
+offset_bottom = 70.0
+theme_override_fonts/font = ExtResource("1_lti8b")
+text = "wbg_grass"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="wbg_parkour" type="Panel" parent="Panel/mapchoose" unique_id=851302219]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 96.0
+offset_right = 268.0
+offset_bottom = 201.0
+
+[node name="open" type="Button" parent="Panel/mapchoose/wbg_parkour" unique_id=1929539273]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 72.0
+offset_right = 118.0
+offset_bottom = 103.0
+text = "Open"
+
+[node name="Label" type="Label" parent="Panel/mapchoose/wbg_parkour" unique_id=737047039]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 118.0
+offset_bottom = 70.0
+theme_override_fonts/font = ExtResource("1_lti8b")
+text = "wbg_parkour"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="3partychoose" type="Window" parent="." unique_id=1868133055]
+transparent_bg = true
+oversampling_override = 1.0
+initial_position = 2
+size = Vector2i(399, 203)
+
+[node name="Label" type="Label" parent="3partychoose" unique_id=1324155220]
+offset_right = 399.0
+offset_bottom = 122.0
+text = "Please enter below the id of the map.
+(id is the name of the folder in maps/)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="3partychoose" unique_id=1569020257 node_paths=PackedStringArray("input_field", "window")]
+offset_left = 3.0
+offset_top = 169.0
+offset_right = 396.0
+offset_bottom = 200.0
+text = "map "
+script = ExtResource("4_4hy44")
+input_field = NodePath(".")
+window = NodePath("..")
+
 [connection signal="pressed" from="Panel/Start" to="." method="start"]
+[connection signal="pressed" from="Panel/map" to="." method="choosemapopen"]
 [connection signal="pressed" from="Panel/quit" to="." method="quit"]
+[connection signal="pressed" from="Panel/mapchoose/bar/infobar/Button" to="3partychoose/LineEdit" method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/mapchoose/bar/Button" to="." method="choosemapclose"]
+[connection signal="pressed" from="Panel/mapchoose/wbg_grass/open" to="." method="wbg_grassopen"]
+[connection signal="pressed" from="Panel/mapchoose/wbg_parkour/open" to="." method="wbg_parkouropen"]
+[connection signal="close_requested" from="3partychoose" to="3partychoose/LineEdit" method="_on_partychoose_close_requested"]

@@ -1,4 +1,6 @@
 v2026.10.2.1
+
+2026.10.2.1
 - Default ball position moved a little down
 - Added mainmenu
 - Daeth hitbox is a lot smaller
@@ -10,6 +12,19 @@ v2026.10.2.1
 - Moved frys hitbox to match with plats hitbox
 - Made case the ball bigger
 - Added background image for menu
+- Added quit to menu button to pausemenu
+- Added the menu for more maps in the main menu
+- Added new map
+- Every included map will have wbg_
+- Moved nametags a bit
+- Renamed example map to wbg_example
+- Removed command dev alahakbar
+- Fixed spelling in command help
+- Removed command give fps that caused crashing in studio
+- Removed command dev parkour
+- Map parkour is now a sepparate map
+- Added opener to menu for 3rd party maps
+- Changed user://
 
 2026.10.2.0 (f5f8950)
 - Pressing Esc will now trigger a popup instead of closing

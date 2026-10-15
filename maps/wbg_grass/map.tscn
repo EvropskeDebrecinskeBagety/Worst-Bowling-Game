@@ -1,0 +1,263 @@
+[gd_scene format=3 uid="uid://daxpo1frn6cej"]
+
+[ext_resource type="PackedScene" uid="uid://bsknvhwny5hb0" path="res://player.tscn" id="1_cdncc"]
+[ext_resource type="Script" uid="uid://bb70imk3sg1fb" path="res://scr/player.gd" id="2_o4hm1"]
+[ext_resource type="Texture2D" uid="uid://q6eivhn0x6ja" path="res://caseoh-2.webp" id="3_g4nf0"]
+[ext_resource type="Script" uid="uid://ca4x5gmk5afnx" path="res://scr/consol.gd" id="4_ntjve"]
+[ext_resource type="FontFile" uid="uid://cm0tm67b1gexx" path="res://BebasNeue-Regular.ttf" id="5_ne2vn"]
+[ext_resource type="Script" uid="uid://deh4p5r8xtnb0" path="res://scr/menu.gd" id="6_lq4ay"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_w3y6o"]
+radius = 0.9781475
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ylwc"]
+albedo_texture = ExtResource("3_g4nf0")
+normal_scale = 5.28
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_x6df1"]
+radius = 0.9741211
+height = 1.9482422
+
+[sub_resource type="LabelSettings" id="LabelSettings_ap0yd"]
+font = ExtResource("5_ne2vn")
+font_color = Color(0.6666667, 0.2509804, 0.25490198, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_u7fo2"]
+font = ExtResource("5_ne2vn")
+font_size = 28
+font_color = Color(0.6666667, 0.2509804, 0.25490198, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sjwaj"]
+size = Vector3(238.47131, 1, 267.5988)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sjwaj"]
+albedo_color = Color(0.35367155, 0.5394694, 0.30220175, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6eo0t"]
+size = Vector3(6457.161, 3.1638184, 7693.0854)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6eo0t"]
+
+[sub_resource type="Sky" id="Sky_gbvnj"]
+sky_material = SubResource("ProceduralSkyMaterial_6eo0t")
+process_mode = 2
+
+[sub_resource type="Environment" id="Environment_6eo0t"]
+background_mode = 2
+sky = SubResource("Sky_gbvnj")
+ambient_light_source = 3
+reflected_light_source = 2
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_sjwaj"]
+
+[node name="WbgGrass" type="Node3D" unique_id=1577833657]
+
+[node name="ball" parent="." unique_id=1851737853 instance=ExtResource("1_cdncc")]
+physics_interpolation_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09695244, 5.8497934, -5.253885)
+script = ExtResource("2_o4hm1")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="ball" unique_id=400254134]
+shape = SubResource("SphereShape3D_w3y6o")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="ball" unique_id=1182576146]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0014648438, 0)
+material_override = SubResource("StandardMaterial3D_2ylwc")
+mesh = SubResource("CapsuleMesh_x6df1")
+
+[node name="Camera3D" type="Camera3D" parent="ball" unique_id=1867804637]
+transform = Transform3D(0.00040789787, -0.31536144, 0.94897157, -6.5473665e-05, 0.9489716, 0.31536144, -0.9999998, -0.00019076886, 0.00036643818, 9.852547, 4.19532, 0.18169737)
+keep_aspect = 0
+doppler_tracking = 2
+fov = 102.18838
+size = 6.063
+frustum_offset = Vector2(-0.025, 0.13)
+
+[node name="ui" type="Control" parent="ball/Camera3D" unique_id=563641688]
+layout_mode = 3
+anchor_right = 1.0020001
+anchor_bottom = 1.0
+offset_right = -0.9602051
+offset_bottom = 4.0
+metadata/_edit_use_anchors_ = true
+
+[node name="console" type="LineEdit" parent="ball/Camera3D/ui" unique_id=1472466432 node_paths=PackedStringArray("input_field", "ball", "log_window")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.67
+anchor_top = 0.95900005
+anchor_right = 1.0
+anchor_bottom = 0.994
+offset_left = -1011.3296
+offset_top = -479.55603
+offset_right = -1414.88
+offset_bottom = -486.49597
+max_length = 25
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+flat = true
+script = ExtResource("4_ntjve")
+input_field = NodePath(".")
+ball = NodePath("../../..")
+log_window = NodePath("../TextEdit")
+
+[node name="consolenote" type="Label" parent="ball/Camera3D/ui" unique_id=1860660551]
+layout_mode = 0
+offset_left = 225.0
+offset_top = 567.0
+offset_right = 272.0
+offset_bottom = 587.0
+text = "CONSOLE:"
+label_settings = SubResource("LabelSettings_ap0yd")
+
+[node name="Panel" type="Panel" parent="ball/Camera3D/ui" unique_id=619815170 node_paths=PackedStringArray("gamemenu", "achievmenu", "consolebox", "consolenote")]
+layout_mode = 0
+offset_left = 222.0
+offset_top = 590.0
+offset_right = 508.0
+offset_bottom = 986.0
+script = ExtResource("6_lq4ay")
+gamemenu = NodePath(".")
+achievmenu = NodePath("../achievmenu")
+consolebox = NodePath("../console")
+consolenote = NodePath("../consolenote")
+
+[node name="pausedtex" type="Label" parent="ball/Camera3D/ui/Panel" unique_id=2075592068]
+layout_mode = 0
+offset_top = 7.0
+offset_right = 286.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(0.6666667, 0.2509804, 0.25490198, 1)
+text = "MENU"
+label_settings = SubResource("LabelSettings_u7fo2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="ball/Camera3D/ui/Panel" unique_id=899336482]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 47.0
+offset_right = 283.0
+offset_bottom = 51.0
+
+[node name="qui" type="Button" parent="ball/Camera3D/ui/Panel" unique_id=92465536]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 356.0
+offset_right = 283.0
+offset_bottom = 393.0
+theme_override_colors/font_color = Color(0.63375676, 0.6337568, 0.63375676, 1)
+theme_override_colors/font_pressed_color = Color(0.8222036, 0.23713088, 0.23133981, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.4745098, 0.4745098, 0.4745098, 0.5019608)
+theme_override_fonts/font = ExtResource("5_ne2vn")
+text = "QUIT"
+flat = true
+
+[node name="qui2" type="Button" parent="ball/Camera3D/ui/Panel" unique_id=1054912151]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 319.0
+offset_right = 283.0
+offset_bottom = 356.0
+theme_override_colors/font_color = Color(0.63375676, 0.6337568, 0.63375676, 1)
+theme_override_colors/font_pressed_color = Color(0.8222036, 0.23713088, 0.23133981, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.4745098, 0.4745098, 0.4745098, 0.5019608)
+theme_override_fonts/font = ExtResource("5_ne2vn")
+text = "QUIT TO MENU"
+flat = true
+
+[node name="unpa" type="Button" parent="ball/Camera3D/ui/Panel" unique_id=321690360]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 271.0
+offset_right = 283.0
+offset_bottom = 308.0
+theme_override_colors/font_color = Color(0.63375676, 0.6337568, 0.63375676, 1)
+theme_override_colors/font_pressed_color = Color(0.8222036, 0.23713088, 0.23133981, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.4745098, 0.4745098, 0.4745098, 0.5019608)
+theme_override_fonts/font = ExtResource("5_ne2vn")
+text = "UNPAUSE"
+flat = true
+
+[node name="achiev" type="Button" parent="ball/Camera3D/ui/Panel" unique_id=772917977]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 58.0
+offset_right = 283.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.63375676, 0.6337568, 0.63375676, 1)
+theme_override_colors/font_pressed_color = Color(0.8222036, 0.23713088, 0.23133981, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.4745098, 0.4745098, 0.4745098, 0.5019608)
+theme_override_fonts/font = ExtResource("5_ne2vn")
+disabled = true
+text = "ACHIEVMENTS"
+flat = true
+
+[node name="HSeparator2" type="HSeparator" parent="ball/Camera3D/ui/Panel" unique_id=1724832520]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 308.0
+offset_right = 283.0
+offset_bottom = 317.0
+
+[node name="achievmenu" type="Panel" parent="ball/Camera3D/ui" unique_id=1038151404]
+layout_mode = 0
+offset_left = 511.0
+offset_top = 695.0
+offset_right = 1024.0
+offset_bottom = 986.0
+
+[node name="TextEdit" type="TextEdit" parent="ball/Camera3D/ui" unique_id=790316326]
+visible = false
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+editable = false
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+middle_mouse_paste_enabled = false
+empty_selection_clipboard_enabled = false
+tab_input_mode = false
+virtual_keyboard_enabled = false
+
+[node name="Label3D" type="Label3D" parent="ball" unique_id=870085845]
+transform = Transform3D(0.003869821, -0.023976766, 0.999705, 0.016513418, 0.9995776, 0.023909733, -0.9998563, 0.01641602, 0.004264129, 0.027190164, 1.4400883, 0)
+text = "bugged caseoh"
+uppercase = true
+
+[node name="grass" type="StaticBody3D" parent="." unique_id=2065169700]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="grass" unique_id=1588959420]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.042175293, 2.165831, -0.27189636)
+shape = SubResource("BoxShape3D_sjwaj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="grass" unique_id=1230043964]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 544.0448, 1.0819092, -353.64)
+material_override = SubResource("StandardMaterial3D_sjwaj")
+mesh = SubResource("BoxMesh_6eo0t")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=787554158]
+environment = SubResource("Environment_6eo0t")
+camera_attributes = SubResource("CameraAttributesPractical_sjwaj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1960232379]
+transform = Transform3D(1, 0, 0, 0, 0.68580425, 0.7277861, 0, -0.7277861, 0.68580425, -0.027930737, 10.819599, 0.06197834)
+light_indirect_energy = 6.14
+light_angular_distance = 2.38
+shadow_enabled = true
+shadow_transmittance_bias = -2.38
+shadow_blur = 0.81
+
+[connection signal="pressed" from="ball/Camera3D/ui/Panel/qui" to="ball/Camera3D/ui/Panel" method="_on_quit_pressed"]
+[connection signal="pressed" from="ball/Camera3D/ui/Panel/qui2" to="ball/Camera3D/ui/Panel" method="_on_quitmenu"]
+[connection signal="pressed" from="ball/Camera3D/ui/Panel/unpa" to="ball/Camera3D/ui/Panel" method="_on_unpause_button_pressed"]
+[connection signal="pressed" from="ball/Camera3D/ui/Panel/achiev" to="ball/Camera3D/ui/Panel" method="_on_achiev_pressed"]
